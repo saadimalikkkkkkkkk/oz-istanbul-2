@@ -21,7 +21,10 @@ import {
   ClipboardList,
   FileCheck2,
   FileUser,
-  UserRoundCheck
+  UserRoundCheck,
+  ArrowUpRight,
+  Play,
+  Menu
 } from 'lucide-react';
 
 const IMG = 'https://ozistanbul.com/wp-content/uploads';
