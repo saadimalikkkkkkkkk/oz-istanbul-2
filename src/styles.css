@@ -2960,3 +2960,149 @@ footer {
     transition: none;
   }
 }
+/* =========================================================
+   MOBILE POLISH
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* HEADER */
+
+  .nav-shell {
+    height: 70px;
+  }
+
+  .nav-shell .logo {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .mobile-menu {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #1687e8;
+  }
+
+  .mobile-menu svg {
+    display: block;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero-background {
+    object-position: 62% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.82) 0%,
+        rgba(0, 0, 0, 0.60) 52%,
+        rgba(0, 0, 0, 0.20) 100%
+      );
+  }
+
+  .hero-content {
+    padding-top: 78px;
+    padding-bottom: 70px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+
+    font-size: 42px;
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+  }
+
+  .hero .eyebrow {
+    font-size: 13px;
+    line-height: 1.4;
+    letter-spacing: 0.13em;
+
+    margin-bottom: 20px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+
+    margin-top: 26px;
+    margin-bottom: 28px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+
+  /* HERO BUTTONS */
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 22px;
+  }
+
+  .hero-actions .button {
+    min-height: 52px;
+
+    padding: 14px 20px;
+
+    font-size: 12px;
+  }
+
+  .hero-actions .arrow {
+    width: 18px;
+    height: 18px;
+
+    flex: 0 0 auto;
+  }
+
+  .play-link {
+    gap: 10px;
+
+    font-size: 15px;
+  }
+
+  .play-link i {
+    width: 48px;
+    height: 48px;
+
+    margin-right: 2px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    font-size: 0;
+  }
+
+  .play-link i svg {
+    display: block;
+  }
+
+
+  /* HOMEPAGE ABOUT IMAGE */
+
+  .about-images {
+    height: 340px;
+  }
+
+  .main-image {
+    width: 82%;
+    object-position: center;
+  }
+
+}

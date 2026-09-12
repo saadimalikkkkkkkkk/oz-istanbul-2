@@ -116,7 +116,7 @@ const consultancy = [
 ========================================================= */
 
 function Arrow() {
-  return <span className="arrow">↗</span>;
+  return <ArrowUpRight className="arrow" size={17} strokeWidth={2} />;
 }
 
 
@@ -163,12 +163,12 @@ function Header() {
 
 
         <button
-          className="mobile-menu"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-        >
-          ☰
-        </button>
+  className="mobile-menu"
+  onClick={() => setOpen(!open)}
+  aria-label="Menu"
+>
+  <Menu size={27} strokeWidth={2} />
+</button>
 
 
         <nav className={open ? 'open' : ''}>
@@ -671,12 +671,14 @@ function HomePage() {
             </a>
 
             <a
-              className="play-link"
-              href="#about"
-            >
-              <i>▶</i>
-              Discover Öz Istanbul
-            </a>
+  className="play-link"
+  href="#about"
+>
+  <i>
+    <Play size={13} fill="currentColor" strokeWidth={0} />
+  </i>
+  Discover Öz Istanbul
+</a>
 
           </div>
 
