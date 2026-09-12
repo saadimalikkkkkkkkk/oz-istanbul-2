@@ -178,18 +178,12 @@ header {
 }
 
 .hero-shade {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.78) 0%,
-      rgba(0, 0, 0, 0.56) 43%,
-      rgba(0, 0, 0, 0.20) 78%,
-      rgba(0, 0, 0, 0.08)
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.08) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .hero-content {
@@ -3004,15 +2998,7 @@ footer {
     object-position: 62% center;
   }
 
-  .hero-shade {
-    background:
-      linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.82) 0%,
-        rgba(0, 0, 0, 0.60) 52%,
-        rgba(0, 0, 0, 0.20) 100%
-      );
-  }
+
 
   .hero-content {
     padding-top: 78px;
