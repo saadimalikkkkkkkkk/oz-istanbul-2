@@ -13,9 +13,12 @@ import turkeyIcon from './assets/turkey.jpg';
 import europeIcon from './assets/europe.jpg';
 import uaeIcon from './assets/uae.jpg';
 import asiaIcon from './assets/asia.jpg';
+
 import aboutBackground from './assets/about-background.png';
 import aboutLeftImage from './assets/about-left.png';
-
+import servicesAboutImage from './assets/services-about.png';
+import whyUsImage from './assets/why.us.png';
+import contactImage from './assets/contact.png';
 import {
   UsersRound,
   ClipboardList,
@@ -24,7 +27,13 @@ import {
   UserRoundCheck,
   ArrowUpRight,
   Play,
-  Menu
+  Menu,
+  Phone,
+  MessageCircle,
+  Mail,
+  MapPin,
+  Clock,
+  Building2
 } from 'lucide-react';
 
 const IMG = 'https://ozistanbul.com/wp-content/uploads';
@@ -119,7 +128,13 @@ const consultancy = [
 ========================================================= */
 
 function Arrow() {
-  return <ArrowUpRight className="arrow" size={17} strokeWidth={2} />;
+  return (
+    <ArrowUpRight
+      className="arrow"
+      size={17}
+      strokeWidth={2}
+    />
+  );
 }
 
 
@@ -159,20 +174,21 @@ function Header() {
         </div>
       </div>
 
-
       <div className="nav-shell shell">
 
         <Logo />
 
-
         <button
-  className="mobile-menu"
-  onClick={() => setOpen(!open)}
-  aria-label="Menu"
->
-  <Menu size={27} strokeWidth={2} />
-</button>
-
+          className="mobile-menu"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+          aria-expanded={open}
+        >
+          <Menu
+            size={27}
+            strokeWidth={2}
+          />
+        </button>
 
         <nav className={open ? 'open' : ''}>
 
@@ -188,12 +204,11 @@ function Header() {
             Services <b>⌄</b>
           </a>
 
-          <a href="/#contact">
-            Contact
-          </a>
+          <a href="/contact">
+  Contact
+</a>
 
         </nav>
-
 
         <a
           className="button nav-button"
@@ -223,13 +238,12 @@ function ServiceCard({ item }) {
           src={item[2]}
           alt=""
           loading="lazy"
-          onError={(e) =>
-            e.currentTarget.parentElement.classList.add('fallback')
-          }
+          onError={(e) => {
+            e.currentTarget.parentElement.classList.add('fallback');
+          }}
         />
 
       </div>
-
 
       <div className="service-copy">
 
@@ -249,8 +263,9 @@ function ServiceCard({ item }) {
 
 
 /* =========================================================
-   ABOUT PAGE
+   SCROLL SERVICES
 ========================================================= */
+
 function ScrollServiceList() {
   const servicesRef = useRef(null);
 
@@ -261,13 +276,12 @@ function ScrollServiceList() {
     'International Trade',
     'Tourism',
     'Immigration & Global Mobility',
-    'Business & Investment',
+    'Business & Investment'
   ];
 
   useEffect(() => {
-    const items = servicesRef.current?.querySelectorAll(
-      '.scroll-service'
-    );
+    const items =
+      servicesRef.current?.querySelectorAll('.scroll-service');
 
     if (!items) return;
 
@@ -280,7 +294,7 @@ function ScrollServiceList() {
         });
       },
       {
-        threshold: 0.2,
+        threshold: 0.2
       }
     );
 
@@ -294,19 +308,22 @@ function ScrollServiceList() {
       className="scroll-services"
       ref={servicesRef}
     >
+
       <span className="scroll-services-label">
         OUR SERVICES
       </span>
 
       <div className="scroll-services-list">
+
         {services.map((service, index) => (
           <div
             className="scroll-service"
             key={service}
             style={{
-              transitionDelay: `${index * 0.08}s`,
+              transitionDelay: `${index * 0.08}s`
             }}
           >
+
             <span>
               0{index + 1}
             </span>
@@ -314,19 +331,26 @@ function ScrollServiceList() {
             <strong>
               {service}
             </strong>
+
           </div>
         ))}
+
       </div>
+
     </div>
   );
 }
+
+
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
 function AboutPage() {
   return (
     <main className="about-page">
 
-      {/* =====================================================
-         ABOUT HERO
-      ===================================================== */}
+      {/* ABOUT HERO */}
 
       <section
         className="about-page-hero"
@@ -334,8 +358,6 @@ function AboutPage() {
           backgroundImage: `url(${aboutBackground})`
         }}
       >
-
-        <div className="about-page-hero-overlay"></div>
 
         <div className="about-page-hero-inner">
 
@@ -348,33 +370,32 @@ function AboutPage() {
       </section>
 
 
-      {/* =====================================================
-         ABOUT INTRODUCTION
-         IMAGE LEFT / TEXT RIGHT
-      ===================================================== */}
+      {/* ABOUT STORY */}
 
       <section className="about-story">
 
         <div className="shell about-story-inner">
 
-          {/* =================================================
-             LEFT IMAGE
-          ================================================= */}
+          {/* LEFT IMAGES */}
 
           <div className="about-story-visual">
 
             <img
-  className="about-main-image"
-  src={aboutLeftImage}
-  alt="Öz Istanbul Group"
-/>
+              className="about-main-image"
+              src={aboutLeftImage}
+              alt="Öz Istanbul Group"
+            />
+
+            <img
+              className="about-services-image"
+              src={servicesAboutImage}
+              alt="Öz Istanbul Group Services"
+            />
 
           </div>
 
 
-          {/* =================================================
-             RIGHT CONTENT
-          ================================================= */}
+          {/* RIGHT CONTENT */}
 
           <div className="about-story-content">
 
@@ -388,51 +409,90 @@ function AboutPage() {
               World Business Point
             </h2>
 
-
-            <div className="about-story-text">
+            <div className="about-story-copy">
 
               <p>
-                Öz İstanbul Group is a global business platform built
-                on experience, execution, and results.
+                <strong>
+                  Building Businesses. Developing Investments. Creating Opportunities.
+                </strong>
               </p>
 
               <p>
-                Originally operating as OZ Group since 2016, the
-                company has been active in Türkiye under the Öz İstanbul
-                brand since 2018, supported by over 20 years of
-                international experience across Dubai and global markets.
+                Öz İstanbul Group is an international investment,
+                development, and business group headquartered in
+                Istanbul, Türkiye, built on more than 20 years of
+                international business experience across Dubai,
+                Europe, Türkiye, and global markets.
               </p>
 
               <p>
-                We are not a traditional consultancy. We are active
-                operators.
+                Over the past two decades, our experience has grown
+                across different countries, industries, and economic
+                environments — giving us a strong understanding of
+                investment, development, international business,
+                and cross-border opportunities.
               </p>
 
               <p>
-                We invest, manage, and grow businesses across education,
-                immigration, real estate, tourism, and international
-                trade — providing our clients with direct access to
-                proven systems, strong networks, and real opportunities.
+                <strong>
+                  We are more than a consultancy. We are investors,
+                  developers, and active business operators.
+                </strong>
               </p>
 
               <p>
-                Our approach is defined by clarity, transparency,
-                and performance.
+                Our core activities include construction and real
+                estate development, real estate investment, education,
+                international trade, immigration and global mobility,
+                tourism, and technology.
               </p>
 
               <p>
-                Every service we deliver is designed to create real
-                value and long-term success.
+                We don&apos;t simply advise our clients on opportunities.
+                We invest, we develop, we operate, and we execute.
               </p>
 
               <p>
-                With a global vision and a strong local presence,
-                we empower individuals and businesses to expand
-                beyond borders — confidently and securely.
+                Our international experience and established business
+                network allow us to connect people, capital, businesses,
+                and opportunities across borders.
               </p>
 
               <p>
-                We don't follow opportunities. We create them.
+                <strong>
+                  One Group. Multiple Industries. Global Vision.
+                </strong>
+              </p>
+
+              <p>
+                From developing and investing in real estate to
+                building businesses, expanding into international
+                markets, creating educational opportunities, and
+                facilitating global trade and mobility, every division
+                of Öz İstanbul Group operates with the same principles:
+              </p>
+
+              <p>
+                Experience. Trust. Transparency. Execution. Long-term value.
+              </p>
+
+              <p>
+                For more than two decades, we have believed that
+                strong businesses are not built on promises —
+                they are built on results.
+              </p>
+
+              <p>
+                Today, Öz İstanbul Group continues to expand its
+                international presence while remaining focused on
+                one mission: creating valuable businesses, strong
+                investments, and opportunities that cross borders.
+              </p>
+
+              <p>
+                <strong>
+                  We don&apos;t wait for opportunities. We build them.
+                </strong>
               </p>
 
             </div>
@@ -444,9 +504,7 @@ function AboutPage() {
       </section>
 
 
-      {/* =====================================================
-         EXPERIENCE
-      ===================================================== */}
+      {/* EXPERIENCE */}
 
       <section className="about-experience">
 
@@ -465,7 +523,6 @@ function AboutPage() {
             </h2>
 
           </div>
-
 
           <div className="experience-number">
 
@@ -488,9 +545,7 @@ function AboutPage() {
       </section>
 
 
-      {/* =====================================================
-         WHAT WE DO
-      ===================================================== */}
+      {/* WHAT WE DO */}
 
       <section className="section shell about-values">
 
@@ -522,7 +577,6 @@ function AboutPage() {
         <div className="about-value-grid">
 
           <div className="about-value">
-
             <span>01</span>
 
             <h3>
@@ -533,12 +587,10 @@ function AboutPage() {
               Helping entrepreneurs and businesses establish,
               expand, and operate across international markets.
             </p>
-
           </div>
 
 
           <div className="about-value">
-
             <span>02</span>
 
             <h3>
@@ -549,12 +601,10 @@ function AboutPage() {
               Connecting clients with carefully selected real
               estate, investment, and business opportunities.
             </p>
-
           </div>
 
 
           <div className="about-value">
-
             <span>03</span>
 
             <h3>
@@ -565,12 +615,10 @@ function AboutPage() {
               Supporting international students with education,
               university admissions, and language opportunities.
             </p>
-
           </div>
 
 
           <div className="about-value">
-
             <span>04</span>
 
             <h3>
@@ -581,6 +629,135 @@ function AboutPage() {
               Providing guidance for individuals and families
               looking to establish new opportunities abroad.
             </p>
+          </div>
+
+        </div>
+
+
+        <img
+          className="why-us-image"
+          src={whyUsImage}
+          alt="Why Öz Istanbul"
+        />
+
+      </section>
+
+
+      {/* WHY ÖZ ISTANBUL */}
+
+      <section className="why-oz">
+
+        <div className="shell why-oz-inner">
+
+          <div className="why-oz-image"></div>
+
+          <div className="why-oz-content">
+
+            <p className="eyebrow">
+              WHY ÖZ ISTANBUL
+            </p>
+
+            <h2>
+              Experience That
+              <br />
+              <em>Creates Real Value.</em>
+            </h2>
+
+            <p className="why-oz-intro">
+              We combine more than two decades of international
+              experience with local expertise, strong business
+              networks, and hands-on operational knowledge.
+            </p>
+
+
+            <div className="why-oz-points">
+
+              <div className="why-oz-point">
+
+                <span>01</span>
+
+                <div>
+
+                  <h3>
+                    International Experience
+                  </h3>
+
+                  <p>
+                    Our experience across Türkiye, Dubai, Europe,
+                    the Middle East, and Asia gives us a broad
+                    understanding of international business,
+                    investment, and cross-border opportunities.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="why-oz-point">
+
+                <span>02</span>
+
+                <div>
+
+                  <h3>
+                    We Invest, Not Just Advise
+                  </h3>
+
+                  <p>
+                    We are actively involved in the businesses
+                    and investments we pursue. We develop,
+                    operate, manage, and execute — not simply
+                    recommend.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="why-oz-point">
+
+                <span>03</span>
+
+                <div>
+
+                  <h3>
+                    Strong International Network
+                  </h3>
+
+                  <p>
+                    Our established network connects investors,
+                    businesses, institutions, and opportunities
+                    across borders.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="why-oz-point">
+
+                <span>04</span>
+
+                <div>
+
+                  <h3>
+                    Trust, Transparency &amp; Execution
+                  </h3>
+
+                  <p>
+                    We believe strong businesses are built through
+                    transparency, professionalism, reliable execution,
+                    and long-term relationships.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -589,9 +766,7 @@ function AboutPage() {
       </section>
 
 
-      {/* =====================================================
-         MISSION
-      ===================================================== */}
+      {/* MISSION */}
 
       <section className="about-mission">
 
@@ -622,7 +797,273 @@ function AboutPage() {
   );
 }
 
+/* =========================================================
+   CONTACT PAGE
+========================================================= */
 
+function ContactPage() {
+  return (
+    <main className="contact-page">
+
+      {/* CONTACT HERO */}
+
+      <section
+        className="contact-page-hero"
+        style={{
+          backgroundImage: `url(${contactImage})`
+        }}
+      >
+
+        <div className="shell contact-page-hero-inner">
+
+          <p className="eyebrow">
+            GET IN TOUCH
+          </p>
+
+          <h1>
+            Let’s Build
+            <br />
+            <span>What’s Next.</span>
+          </h1>
+
+          <p className="contact-hero-text">
+            We are always open to new partnerships, opportunities,
+            and conversations. Reach out to us — we’d be happy
+            to hear from you.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      {/* CONTACT INFORMATION */}
+
+      <section className="contact-info-section">
+
+        <div className="shell contact-info-grid">
+
+          <div
+  className="contact-info-card contact-info-link"
+  onClick={() => window.location.href = 'tel:+905467270777'}
+>
+  <div className="contact-info-icon">
+    <Phone size={21} />
+  </div>
+  <div>
+    <span>Phone</span>
+    <strong>+90 546 727 07 77</strong>
+  </div>
+</div>
+
+<div
+  className="contact-info-card contact-info-link"
+  onClick={() => window.open('https://wa.me/905467270777', '_blank')}
+>
+  <div className="contact-info-icon whatsapp">
+    <MessageCircle size={21} />
+  </div>
+  <div>
+    <span>WhatsApp</span>
+    <strong>+90 546 727 07 77</strong>
+  </div>
+</div>
+
+<div
+  className="contact-info-card contact-info-link"
+  onClick={() => window.location.href = 'mailto:info@ozistanbul.com'}
+>
+  <div className="contact-info-icon">
+    <Mail size={21} />
+  </div>
+  <div>
+    <span>Email</span>
+    <strong>info@ozistanbul.com</strong>
+  </div>
+</div>
+
+
+          <div className="contact-info-card">
+
+            <div className="contact-info-icon">
+              <MapPin size={21} />
+            </div>
+
+            <div>
+              <span>Head Office</span>
+
+              <strong>
+                Istanbul, Türkiye
+              </strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* FORM + MAP */}
+
+      <section className="contact-main">
+
+        <div className="shell contact-main-grid">
+
+          {/* FORM */}
+
+          <div className="contact-form-area">
+
+            <p className="eyebrow">
+              SEND US A MESSAGE
+            </p>
+
+            <h2>
+              Get in Touch
+            </h2>
+
+            <p className="contact-form-intro">
+              Fill out the form below and our team will get back
+              to you shortly.
+            </p>
+
+
+            <form
+              className="contact-form"
+              onSubmit={(e) => e.preventDefault()}
+            >
+
+              <input
+                type="text"
+                placeholder="Your Name *"
+              />
+
+              <input
+                type="email"
+                placeholder="Your Email *"
+              />
+
+              <input
+                type="tel"
+                placeholder="Phone Number"
+              />
+
+              <input
+                type="text"
+                placeholder="Subject *"
+              />
+
+              <textarea
+                placeholder="Your Message *"
+                rows="6"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="button"
+              >
+                Send Message
+                <Arrow />
+              </button>
+
+            </form>
+
+          </div>
+
+
+          {/* MAP + OFFICE */}
+
+          <div className="contact-location">
+
+            <div className="contact-map">
+
+              <iframe
+  title="Öz Istanbul World Business Point"
+  src="https://www.google.com/maps?q=Öz%20Istanbul%20World%20Business%20Point%2C%2041.0109541%2C28.6553834&z=17&output=embed"
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+></iframe>
+
+            </div>
+
+
+            <div className="office-card">
+
+              <div className="office-row">
+
+                <div className="office-icon">
+                  <Building2
+                    size={25}
+                    strokeWidth={1.8}
+                  />
+                </div>
+
+                <div>
+
+                  <h3>
+                    Head Office
+                  </h3>
+
+                  <p>
+                    Istanbul, Türkiye
+                  </p>
+
+                  <p>
+                    <p>Mevlana Mh. Sultan Ahmet Cad. 7.Cadde No:1</p>
+<p>34515 Esenyurt, Istanbul</p>
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div className="office-row">
+
+                <div className="office-icon">
+                  <Clock
+                    size={25}
+                    strokeWidth={1.8}
+                  />
+                </div>
+
+                <div className="office-hours">
+
+                  <div>
+                    <span>
+                      Monday – Friday
+                    </span>
+
+                    <strong>
+                      09:00 – 18:00
+                    </strong>
+                  </div>
+
+                  <div>
+                    <span>
+                      Saturday – Sunday
+                    </span>
+
+                    <strong>
+                      Closed
+                    </strong>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+  );
+}
 /* =========================================================
    HOME PAGE
 ========================================================= */
@@ -631,10 +1072,7 @@ function HomePage() {
   return (
     <main id="home">
 
-
-      {/* =====================================================
-         HERO
-      ===================================================== */}
+      {/* HERO */}
 
       <section className="hero">
 
@@ -645,7 +1083,6 @@ function HomePage() {
         />
 
         <div className="hero-shade"></div>
-
 
         <div className="shell hero-content">
 
@@ -663,25 +1100,29 @@ function HomePage() {
             networks.
           </p>
 
-
           <div className="hero-actions">
 
             <a
               className="button"
-              href="#contact"
+              href="#businesses"
             >
               Explore Our Services <Arrow />
             </a>
 
             <a
-  className="play-link"
-  href="#about"
->
-  <i>
-    <Play size={13} fill="currentColor" strokeWidth={0} />
-  </i>
-  Discover Öz Istanbul
-</a>
+              className="play-link"
+              href="#about"
+            >
+              <i>
+                <Play
+                  size={13}
+                  fill="currentColor"
+                  strokeWidth={0}
+                />
+              </i>
+
+              Discover Öz Istanbul
+            </a>
 
           </div>
 
@@ -690,9 +1131,7 @@ function HomePage() {
       </section>
 
 
-      {/* =====================================================
-         ABOUT
-      ===================================================== */}
+      {/* ABOUT */}
 
       <section
         id="about"
@@ -760,7 +1199,6 @@ function HomePage() {
             and securely.
           </p>
 
-
           <a
             className="text-link"
             href="/about"
@@ -773,9 +1211,7 @@ function HomePage() {
       </section>
 
 
-      {/* =====================================================
-         CORE BUSINESSES
-      ===================================================== */}
+      {/* CORE BUSINESSES */}
 
       <section
         id="businesses"
@@ -799,7 +1235,6 @@ function HomePage() {
               </h2>
 
             </div>
-
 
             <p>
               Our strength comes from real projects, real
@@ -838,9 +1273,7 @@ function HomePage() {
       </section>
 
 
-      {/* =====================================================
-         CONSULTANCY
-      ===================================================== */}
+      {/* CONSULTANCY */}
 
       <section
         id="consultancy"
@@ -865,7 +1298,6 @@ function HomePage() {
 
             </div>
 
-
             <p>
               Alongside our business operations, we provide
               professional consultancy services based on
@@ -889,7 +1321,6 @@ function HomePage() {
                   alt=""
                   loading="lazy"
                 />
-
 
                 <div>
 
@@ -922,9 +1353,7 @@ function HomePage() {
       </section>
 
 
-      {/* =====================================================
-         GLOBAL PRESENCE
-      ===================================================== */}
+      {/* GLOBAL PRESENCE */}
 
       <section className="global">
 
@@ -948,69 +1377,34 @@ function HomePage() {
 
           <div className="regions">
 
+            {[
+              [turkeyIcon, 'Türkiye'],
+              [europeIcon, 'Europe'],
+              [uaeIcon, 'Middle East'],
+              [asiaIcon, 'Asia']
+            ].map(([icon, name]) => (
 
-            <div className="region-card">
+              <div
+                className="region-card"
+                key={name}
+              >
 
-              <div className="region-icon">
-                <img
-                  src={turkeyIcon}
-                  alt="Türkiye"
-                />
+                <div className="region-icon">
+
+                  <img
+                    src={icon}
+                    alt={name}
+                  />
+
+                </div>
+
+                <span className="region-name">
+                  {name}
+                </span>
+
               </div>
 
-              <span className="region-name">
-                Türkiye
-              </span>
-
-            </div>
-
-
-            <div className="region-card">
-
-              <div className="region-icon">
-                <img
-                  src={europeIcon}
-                  alt="Europe"
-                />
-              </div>
-
-              <span className="region-name">
-                Europe
-              </span>
-
-            </div>
-
-
-            <div className="region-card">
-
-              <div className="region-icon">
-                <img
-                  src={uaeIcon}
-                  alt="Middle East"
-                />
-              </div>
-
-              <span className="region-name">
-                Middle East
-              </span>
-
-            </div>
-
-
-            <div className="region-card">
-
-              <div className="region-icon">
-                <img
-                  src={asiaIcon}
-                  alt="Asia"
-                />
-              </div>
-
-              <span className="region-name">
-                Asia
-              </span>
-
-            </div>
+            ))}
 
           </div>
 
@@ -1019,9 +1413,7 @@ function HomePage() {
       </section>
 
 
-      {/* =====================================================
-         PROCESS
-      ===================================================== */}
+      {/* PROCESS */}
 
       <section className="section process shell">
 
@@ -1082,7 +1474,6 @@ function HomePage() {
                   {item.number}
                 </b>
 
-
                 <div className="step-card">
 
                   <Icon className="step-icon" />
@@ -1103,9 +1494,7 @@ function HomePage() {
       </section>
 
 
-      {/* =====================================================
-         CONTACT
-      ===================================================== */}
+      {/* CONTACT */}
 
       <section
         id="contact"
@@ -1140,9 +1529,7 @@ function HomePage() {
 
 
           <form
-            onSubmit={(e) =>
-              e.preventDefault()
-            }
+            onSubmit={(e) => e.preventDefault()}
           >
 
             <input
@@ -1156,7 +1543,6 @@ function HomePage() {
             <input
               placeholder="Email Address*"
             />
-
 
             <select defaultValue="">
 
@@ -1180,7 +1566,6 @@ function HomePage() {
               </option>
 
             </select>
-
 
             <button className="button">
               Send Message <Arrow />
@@ -1209,12 +1594,10 @@ function Footer() {
 
         <Logo />
 
-
         <p>
           Real business. Real results.
           Global opportunities.
         </p>
-
 
         <div>
 
@@ -1256,12 +1639,16 @@ function Footer() {
 ========================================================= */
 
 function App() {
+  const path = window.location.pathname;
+
   return (
     <>
       <Header />
 
-      {isAboutPage ? (
+      {path === '/about' ? (
         <AboutPage />
+      ) : path === '/contact' ? (
+        <ContactPage />
       ) : (
         <HomePage />
       )}
