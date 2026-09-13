@@ -3082,6 +3082,10 @@ footer {
 .contact-info-link strong {
   color: #555555;
 }
+.about-story-visual,
+.why-us-image {
+  display: none;
+}
 /* =========================================================
    CONTACT HERO TEXT ANIMATION
 ========================================================= */
