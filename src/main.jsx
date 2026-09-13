@@ -19,6 +19,17 @@ import aboutLeftImage from './assets/about-left.png';
 import servicesAboutImage from './assets/services-about.png';
 import whyUsImage from './assets/why.us.png';
 import contactImage from './assets/contact.png';
+import importExportImage from './assets/import-export.png';
+import businessInvestmentImage from './assets/business-investment.png';
+import projectDevelopmentImage from './assets/project-development.png';
+import globalBusinessImage from './assets/global-business-operations.png';
+import citizenshipResidencyImage from './assets/citizenship-residency-investment.png';
+import studyTurkiyeImage from './assets/study-turkiye-abroad.png';
+import workJobImage from './assets/work-job-opportunities-abroad.png';
+import companyFormationImage from './assets/company-formation-business-setup.png';
+import investmentProjectImage from './assets/investment-project-consultancy.png';
+import officialTranslationImage from './assets/official-translation-documentation.png';
+import ozIstanbulLogo from './assets/hero-black.jpg';
 import {
   UsersRound,
   ClipboardList,
@@ -33,7 +44,14 @@ import {
   Mail,
   MapPin,
   Clock,
-  Building2
+  Building2,
+  Linkedin,
+  Instagram,
+  Youtube,
+  Globe2,
+  ShieldCheck,
+  BarChart3,
+  ChevronUp
 } from 'lucide-react';
 
 const IMG = 'https://ozistanbul.com/wp-content/uploads';
@@ -67,59 +85,59 @@ const coreServices = [
     tourismImage
   ],
   [
-    'Trading & Import / Export',
-    'We manage international trade, sourcing and supplying products across global markets efficiently.',
-    `${IMG}/2024/09/05-3.jpg`
-  ],
+  'Trading & Import / Export',
+  'We manage international trade, sourcing and supplying products across global markets efficiently.',
+  importExportImage
+],
+[
+  'Business & Investment',
+  'Helping investors start and grow businesses in Türkiye with expert support and strategic guidance.',
+  businessInvestmentImage
+],
   [
-    'Business & Investment',
-    'Helping investors start and grow businesses in Türkiye with expert support and strategic guidance.',
-    `${IMG}/2024/09/06-2.jpg`
-  ],
+  'Project Dev & Partnerships',
+  'Collaborating on real estate and business projects with global partners for growth and success.',
+  projectDevelopmentImage
+],
   [
-    'Project Dev & Partnerships',
-    'Collaborating on real estate and business projects with global partners for growth and success.',
-    `${IMG}/2024/09/01-8.jpg`
-  ],
-  [
-    'Global Business Operations',
-    'Active across Türkiye, Europe, Middle East and Asia, building strong international partnerships.',
-    `${IMG}/2024/09/02-7.jpg`
-  ]
+  'Global Business Operations',
+  'Active across Türkiye, Europe, Middle East and Asia, building strong international partnerships.',
+  globalBusinessImage
+],
 ];
 
 
 const consultancy = [
   [
-    'Citizenship & Residency by Investment',
-    'Professional consultancy for legal pathways in Türkiye, and global programs.',
-    `${IMG}/2026/04/compressed_Citizenship-Residency-by-Investment.webp`
-  ],
+  'Citizenship & Residency by Investment',
+  'Professional consultancy for legal pathways in Türkiye, and global programs.',
+  citizenshipResidencyImage
+],
   [
-    'Study in Türkiye and Abroad',
-    'University placement, language education, and full student support services.',
-    `${IMG}/2026/04/compressed_Study-in-Turkiye-and-Abroad.webp`
-  ],
+  'Study in Türkiye and Abroad',
+  'University placement, language education, and full student support services.',
+  studyTurkiyeImage
+],
   [
-    'Work & Job Opportunities Abroad',
-    'Structured and legal employment solutions across different countries.',
-    `${IMG}/2026/04/compressed_Work-Job-Opportunities-Abroad.webp`
-  ],
+  'Work & Job Opportunities Abroad',
+  'Structured and legal employment solutions across different countries.',
+  workJobImage
+],
   [
-    'Company Formation & Business Setup',
-    'Full support to start and grow businesses in Türkiye, Europe and globally.',
-    `${IMG}/2026/04/compressed_Company-Formation-Business-Setup.webp`
-  ],
+  'Company Formation & Business Setup',
+  'Full support to start and grow businesses in Türkiye, Europe and globally.',
+  companyFormationImage
+],
   [
-    'Investment & Project Consultancy',
-    'Expert guidance for real estate, construction, and business investments.',
-    `${IMG}/2026/04/compressed_Investment-Project-Opportunities.webp`
-  ],
+  'Investment & Project Consultancy',
+  'Expert guidance for real estate, construction, and business investments.',
+  investmentProjectImage
+],
   [
-    'Official Translation & Documentation Services',
-    'Certified translation of diplomas, transcripts, passports and legal papers.',
-    `${IMG}/2026/04/compressed_Legal-Translation-Documentation.webp`
-  ]
+  'Official Translation & Documentation Services',
+  'Certified translation of diplomas, transcripts, passports and legal papers.',
+  officialTranslationImage
+]
 ];
 
 
@@ -1336,9 +1354,7 @@ function HomePage() {
                     {x[1]}
                   </p>
 
-                  <a href="#contact">
-                    Read More <Arrow />
-                  </a>
+                  
 
                 </div>
 
@@ -1587,19 +1603,82 @@ function HomePage() {
 ========================================================= */
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <footer>
+    <footer className="site-footer">
 
-      <div className="shell footer-top">
+      {/* FOOTER MAIN */}
 
-        <Logo />
+      <div className="shell footer-main">
 
-        <p>
-          Real business. Real results.
-          Global opportunities.
-        </p>
+        {/* BRAND */}
 
-        <div>
+        <div className="footer-brand">
+
+          <div className="footer-brand-name">
+            ÖZ ISTANBUL
+          </div>
+
+          <div className="footer-brand-subtitle">
+            WORLD BUSINESS POINT
+          </div>
+
+          <p>
+            Building businesses. Developing investments.
+            Creating opportunities across Türkiye and
+            global markets.
+          </p>
+
+          <div className="footer-socials">
+
+            <a
+              href="#"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+
+            <a
+              href="#"
+              aria-label="Instagram"
+            >
+              <Instagram size={18} />
+            </a>
+
+            <a
+              href="#"
+              aria-label="YouTube"
+            >
+              <Youtube size={18} />
+            </a>
+
+            <a
+              href="https://wa.me/905467270777"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle size={18} />
+            </a>
+
+          </div>
+
+        </div>
+
+
+        {/* QUICK LINKS */}
+
+        <div className="footer-column">
+
+          <h3>
+            Quick Links
+          </h3>
 
           <a href="/">
             Home
@@ -1613,19 +1692,174 @@ function Footer() {
             Services
           </a>
 
-          <a href="/#contact">
+          <a href="/contact">
             Contact Us
           </a>
 
         </div>
 
+
+        {/* SERVICES */}
+
+        <div className="footer-column footer-services">
+
+          <h3>
+            Our Services
+          </h3>
+
+          <a href="/#consultancy">
+            Citizenship &amp; Residency
+          </a>
+
+          <a href="/#consultancy">
+            Study in Türkiye and Abroad
+          </a>
+
+          <a href="/#consultancy">
+            Work &amp; Job Opportunities
+          </a>
+
+          <a href="/#consultancy">
+            Company Formation
+          </a>
+
+          <a href="/#consultancy">
+            Investment &amp; Project Consultancy
+          </a>
+
+          <a href="/#consultancy">
+            Official Translation &amp; Documentation
+          </a>
+
+        </div>
+
+
+        {/* CONTACT INFO */}
+
+        <div className="footer-column footer-contact">
+
+          <h3>
+            Contact Info
+          </h3>
+
+          <a href="tel:+905467270777">
+            <Phone size={18} />
+            <span>
+              +90 546 727 07 77
+            </span>
+          </a>
+
+          <a href="mailto:info@ozistanbul.com">
+            <Mail size={18} />
+            <span>
+              info@ozistanbul.com
+            </span>
+          </a>
+
+          <div>
+            <MapPin size={18} />
+            <span>
+              Istanbul, Türkiye
+            </span>
+          </div>
+
+          <div>
+            <Clock size={18} />
+            <span>
+              Mon – Fri: 09:00 – 18:00
+            </span>
+          </div>
+
+        </div>
+
+
+        {/* GLOBAL STATEMENT */}
+
+        <div className="footer-global">
+  <img
+    src={ozIstanbulLogo}
+    alt="Öz Istanbul"
+    className="footer-logo-image"
+  />
+</div>
+{/* TRUST ITEMS */}
+
+<div className="footer-trust">
+
+  <div>
+    <Globe2 size={22} />
+
+    <span>
+      <strong>Global Reach</strong>
+      Across Continents
+    </span>
+  </div>
+
+  <div>
+    <ShieldCheck size={22} />
+
+    <span>
+      <strong>Trusted Guidance</strong>
+      Professional Support
+    </span>
+  </div>
+
+  <div>
+    <BarChart3 size={22} />
+
+    <span>
+      <strong>Real Opportunities</strong>
+      For a Better Tomorrow
+    </span>
+  </div>
+
+</div>
       </div>
 
 
-      <div className="shell copyright">
+      
 
-        © 2026 Öz Istanbul World Business Point A.Ş.
-        All Rights Reserved.
+
+      {/* COPYRIGHT */}
+
+      <div className="footer-bottom">
+
+        <div className="shell footer-bottom-inner">
+
+          <p>
+            © 2026 Öz Istanbul World Business Point A.Ş.
+            All Rights Reserved.
+          </p>
+
+          <div className="footer-legal">
+
+            <a href="#">
+              Privacy Policy
+            </a>
+
+            <span>|</span>
+
+            <a href="#">
+              Terms of Service
+            </a>
+
+            <span>|</span>
+
+            <a href="#">
+              Sitemap
+            </a>
+
+          </div>
+
+          <button
+            className="footer-top-button"
+            onClick={scrollToTop}
+            aria-label="Back to top"
+          >
+            <ChevronUp size={21} />
+          </button>
+
+        </div>
 
       </div>
 

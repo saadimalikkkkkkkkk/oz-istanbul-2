@@ -599,21 +599,6 @@ h2 {
   letter-spacing: 0.06em;
 }
 
-.consult-card:nth-child(n+2)::before {
-  content: '';
-  display: block;
-  width: 145px;
-  height: 100%;
-  min-height: 210px;
-  background:
-    linear-gradient(rgba(80,0,0,.12), rgba(80,0,0,.12)),
-    url('./assets/istanbul-hero.png') center / cover no-repeat;
-}
-
-.consult-card:nth-child(n+2) > img {
-  display: none;
-}
-
 .center {
   margin-top: 42px;
   text-align: center;
@@ -852,6 +837,7 @@ h2 {
   box-shadow:
     0 0 18px rgba(255, 0, 0, 0.18),
     0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
 .step-icon {
@@ -945,54 +931,329 @@ h2 {
 
 
 /* =========================================================
-   FOOTER
+   PREMIUM FOOTER
+   EVERYTHING IS INSIDE ONE UNIFIED FOOTER BOX
 ========================================================= */
 
-footer {
+.site-footer {
   background: #000000;
   color: #ffffff;
+  overflow: hidden;
 }
 
-.footer-top {
-  min-height: 128px;
+.footer-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.35fr 0.7fr 1.35fr 1.05fr 0.9fr;
+  gap: 55px;
+  padding-top: 58px;
+  padding-bottom: 0;
+  border-top: 1px solid rgba(255,255,255,0.22);
+}
+.footer-logo-image {
+  display: block;
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand-name {
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.footer-brand-subtitle {
+  margin-top: 9px;
+  color: #aaaaaa;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+}
+
+.footer-brand p {
+  max-width: 280px;
+  margin: 22px 0 28px;
+  color: #9c9c9c;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   SOCIALS
+========================================================= */
+
+.footer-socials {
   display: flex;
   align-items: center;
-  gap: 70px;
-  border-top: 1px solid rgba(255,255,255,.25);
+  gap: 14px;
 }
 
-.footer-top .logo {
-  color: #ffffff;
-}
-
-.footer-top p {
-  margin: 0;
-  color: #ffffff;
-  font-size: 13px;
-}
-
-.footer-top > div {
+.footer-socials a {
+  width: 34px;
+  height: 34px;
   display: flex;
-  gap: 24px;
-  margin-left: auto;
-}
-
-.footer-top > div a {
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 50%;
   color: #ffffff;
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.footer-top > div a:hover {
-  color: var(--red);
+.footer-socials a:hover {
+  background: var(--red);
+  border-color: var(--red);
+  transform: translateY(-3px);
 }
 
-.copyright {
-  padding: 18px 0;
-  border-top: 1px solid rgba(255,255,255,.25);
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h3 {
+  margin: 2px 0 23px;
   color: #ffffff;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.footer-column > a {
+  margin-bottom: 12px;
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.footer-column > a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER SERVICES
+========================================================= */
+
+.footer-services > a {
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   CONTACT INFO
+========================================================= */
+
+.footer-contact > a,
+.footer-contact > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 15px;
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.footer-contact svg {
+  flex: 0 0 auto;
+  color: #ffffff;
+}
+
+.footer-contact a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   GLOBAL VISUAL
+========================================================= */
+
+.footer-global {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.20);
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-global svg {
+  margin-bottom: 16px;
+  color: #555555;
+  opacity: 0.75;
+}
+
+.footer-global strong {
+  color: #a9a9a9;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: 0.25em;
+}
+
+.footer-global span {
+  margin-top: 4px;
+  color: #777777;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+}
+
+
+/* =========================================================
+   TRUST STRIP
+   PART OF THE SAME FOOTER BOX
+========================================================= */
+
+.footer-trust {
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 45px;
+  padding: 25px 0;
+
+  border-top: 1px solid rgba(255,255,255,0.16);
+  border-bottom: 1px solid rgba(255,255,255,0.16);
+}
+
+.footer-trust > div {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-height: 45px;
+  padding: 0 35px;
+
+  border-right: 1px solid rgba(255,255,255,0.16);
+}
+
+.footer-trust > div:first-child {
+  padding-left: 0;
+}
+
+.footer-trust > div:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+
+.footer-trust svg {
+  flex: 0 0 auto;
+  color: #ffffff;
+}
+
+.footer-trust span {
+  display: flex;
+  flex-direction: column;
+
+  color: #777777;
+
   font-size: 11px;
+  line-height: 1.5;
+}
+
+.footer-trust strong {
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  background: #000000;
+}
+
+.footer-bottom-inner {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #888888;
+  font-size: 11px;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  margin-right: 35px;
+}
+
+.footer-legal a {
+  color: #888888;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.footer-legal a:hover {
+  color: #ffffff;
+}
+
+.footer-legal span {
+  color: #444444;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.footer-top-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.28);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.footer-top-button:hover {
+  background: var(--red);
+  border-color: var(--red);
 }
 
 
@@ -1059,7 +1320,6 @@ footer {
 
 /* =========================================================
    ABOUT STORY
-   TWO IMAGES LEFT / TEXT RIGHT
 ========================================================= */
 
 .about-story {
@@ -1097,11 +1357,13 @@ footer {
   object-position: center;
   flex-shrink: 0;
 }
+
 .about-services-image {
   width: 120%;
   max-width: none;
   align-self: center;
 }
+
 
 /* =========================================================
    RIGHT TEXT COLUMN
@@ -1172,12 +1434,6 @@ footer {
   display: flex;
   flex-direction: column;
 
-  /*
-    THIS is the important part.
-    It spreads the paragraphs vertically so
-    the final paragraph reaches the bottom
-    of the second image.
-  */
   justify-content: space-between;
 
   overflow: visible;
@@ -1683,6 +1939,8 @@ footer {
     width: min(calc(100% - 42px), 760px);
   }
 
+  /* HEADER */
+
   .nav-shell {
     height: 75px;
   }
@@ -1713,6 +1971,9 @@ footer {
     gap: 16px;
   }
 
+
+  /* HERO */
+
   .hero {
     min-height: 625px;
   }
@@ -1724,6 +1985,9 @@ footer {
   .hero h1 {
     font-size: 58px;
   }
+
+
+  /* HOMEPAGE ABOUT */
 
   .about {
     grid-template-columns: 1fr;
@@ -1753,6 +2017,9 @@ footer {
     margin-top: 12px;
   }
 
+
+  /* GENERAL */
+
   .section-heading {
     display: block;
   }
@@ -1761,13 +2028,22 @@ footer {
     margin-top: 20px;
   }
 
+
+  /* CORE */
+
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+
+  /* CONSULTANCY */
+
   .consultancy-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+
+  /* GLOBAL */
 
   .global {
     padding: 90px 0 100px;
@@ -1781,6 +2057,9 @@ footer {
     grid-template-columns: repeat(2, 1fr);
     gap: 22px;
   }
+
+
+  /* PROCESS */
 
   .process {
     padding-top: 80px;
@@ -1796,27 +2075,52 @@ footer {
     display: none;
   }
 
+
+  /* CONTACT */
+
   .contact-inner {
     grid-template-columns: 1fr;
     gap: 50px;
   }
 
-  .footer-top {
-    padding: 30px 0;
-    display: grid;
-    gap: 18px;
+
+  /* FOOTER */
+
+  .footer-main {
+    grid-template-columns: 1.3fr 0.7fr 1.2fr 1fr;
+    gap: 35px;
   }
 
-  .footer-top > div {
-    margin-left: 0;
-    flex-wrap: wrap;
+  .footer-global {
+    display: none;
   }
+
+  .footer-trust {
+    gap: 0;
+  }
+
+  .footer-trust > div {
+    padding: 0 20px;
+  }
+
+  .footer-trust > div:first-child {
+    padding-left: 0;
+  }
+
+  .footer-trust > div:last-child {
+    padding-right: 0;
+  }
+
+
+  /* ABOUT HERO */
 
   .about-page-hero {
     min-height: 480px;
   }
 
-  /* About story stays close to the hero */
+
+  /* ABOUT STORY */
+
   .about-story {
     padding: 30px 0 90px;
   }
@@ -1830,6 +2134,9 @@ footer {
     font-size: 14px;
   }
 
+
+  /* ABOUT VALUES */
+
   .about-value-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1839,10 +2146,16 @@ footer {
     font-size: 48px;
   }
 
+
+  /* ABOUT EXPERIENCE */
+
   .about-experience-inner {
     flex-direction: column;
     align-items: flex-start;
   }
+
+
+  /* ABOUT WELCOME */
 
   .about-welcome {
     padding: 90px 0 100px;
@@ -1853,12 +2166,19 @@ footer {
     gap: 55px;
   }
 
+
+  /* SCROLL SERVICES */
+
   .scroll-services {
     width: 100%;
     margin-top: 55px;
   }
 
+
+  /* WHY ÖZ */
+
   .why-oz-inner {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
   }
@@ -1879,7 +2199,10 @@ footer {
     width: calc(100% - 32px);
   }
 
-  /* HEADER */
+
+  /* =====================================================
+     HEADER
+  ===================================================== */
 
   .nav-shell {
     height: 70px;
@@ -1900,7 +2223,10 @@ footer {
     color: #1687e8;
   }
 
-  /* HERO */
+
+  /* =====================================================
+     HERO
+  ===================================================== */
 
   .hero {
     min-height: 500px;
@@ -1972,7 +2298,9 @@ footer {
   }
 
 
-  /* GENERAL */
+  /* =====================================================
+     GENERAL
+  ===================================================== */
 
   .section {
     padding: 72px 0;
@@ -1988,7 +2316,9 @@ footer {
   }
 
 
-  /* HOMEPAGE ABOUT */
+  /* =====================================================
+     HOMEPAGE ABOUT
+  ===================================================== */
 
   .about-images {
     height: 340px;
@@ -2021,7 +2351,9 @@ footer {
   }
 
 
-  /* CORE */
+  /* =====================================================
+     CORE
+  ===================================================== */
 
   .service-grid {
     grid-template-columns: 1fr;
@@ -2037,7 +2369,9 @@ footer {
   }
 
 
-  /* CONSULTANCY */
+  /* =====================================================
+     CONSULTANCY
+  ===================================================== */
 
   .consultancy-grid {
     grid-template-columns: 1fr;
@@ -2047,8 +2381,7 @@ footer {
     grid-template-columns: 115px 1fr;
   }
 
-  .consult-card > img,
-  .consult-card:nth-child(n+2)::before {
+  .consult-card > img {
     width: 115px;
   }
 
@@ -2057,7 +2390,9 @@ footer {
   }
 
 
-  /* GLOBAL */
+  /* =====================================================
+     GLOBAL
+  ===================================================== */
 
   .global {
     padding: 72px 0 80px;
@@ -2095,7 +2430,9 @@ footer {
   }
 
 
-  /* PROCESS */
+  /* =====================================================
+     PROCESS
+  ===================================================== */
 
   .process {
     padding-top: 70px;
@@ -2132,7 +2469,9 @@ footer {
   }
 
 
-  /* CONTACT */
+  /* =====================================================
+     CONTACT
+  ===================================================== */
 
   .contact {
     padding: 72px 0;
@@ -2143,14 +2482,76 @@ footer {
   }
 
 
-  /* FOOTER */
+  /* =====================================================
+     FOOTER
+  ===================================================== */
 
-  .footer-top {
-    gap: 12px;
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    padding-top: 50px;
+    padding-bottom: 0;
+  }
+
+  .footer-brand p {
+    max-width: 330px;
+  }
+
+  .footer-column h3 {
+    margin-bottom: 18px;
+  }
+
+  .footer-global {
+    display: none;
+  }
+
+  .footer-trust {
+    grid-column: 1;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+
+    margin-top: 15px;
+    padding: 28px 0;
+  }
+
+  .footer-trust > div,
+  .footer-trust > div:first-child,
+  .footer-trust > div:last-child {
+    padding: 0;
+    border-right: none;
+  }
+@media (max-width: 700px) {
+  .footer-logo-image {
+    width: 130px;
+  }
+}
+  .footer-bottom-inner {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .footer-legal {
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+
+  .footer-top-button {
+    align-self: flex-end;
+    margin-top: -55px;
   }
 
 
-  /* ABOUT HERO */
+  /* =====================================================
+     ABOUT HERO
+  ===================================================== */
 
   .about-page-hero {
     min-height: 430px;
@@ -2167,7 +2568,7 @@ footer {
 
 
   /* =====================================================
-     ABOUT STORY — CLOSE TO HERO IMAGE
+     ABOUT STORY
   ===================================================== */
 
   .about-story {
@@ -2221,7 +2622,9 @@ footer {
   }
 
 
-  /* ABOUT EXPERIENCE */
+  /* =====================================================
+     ABOUT EXPERIENCE
+  ===================================================== */
 
   .about-experience {
     padding: 75px 0;
@@ -2242,7 +2645,9 @@ footer {
   }
 
 
-  /* ABOUT VALUES */
+  /* =====================================================
+     ABOUT VALUES
+  ===================================================== */
 
   .about-values {
     padding-top: 75px;
@@ -2270,14 +2675,17 @@ footer {
   }
 
 
-  @media (max-width: 700px) {
+  /* =====================================================
+     WHY ÖZ ISTANBUL
+  ===================================================== */
 
   .why-oz {
     padding: 70px 0 80px;
   }
 
   .why-oz-inner {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 50px;
   }
 
@@ -2328,10 +2736,11 @@ footer {
     font-size: 15px;
     line-height: 1.7;
   }
-}
 
 
-  /* MISSION */
+  /* =====================================================
+     MISSION
+  ===================================================== */
 
   .about-mission {
     padding: 80px 0;
@@ -2346,7 +2755,9 @@ footer {
   }
 
 
-  /* WELCOME */
+  /* =====================================================
+     WELCOME
+  ===================================================== */
 
   .about-welcome {
     padding: 70px 0 80px;
@@ -2380,7 +2791,9 @@ footer {
   }
 
 
-  /* SCROLL SERVICES */
+  /* =====================================================
+     SCROLL SERVICES
+  ===================================================== */
 
   .scroll-services {
     width: 100%;
@@ -2407,7 +2820,9 @@ footer {
   }
 
 
-  /* STATEMENT */
+  /* =====================================================
+     STATEMENT
+  ===================================================== */
 
   .about-statement {
     margin: 45px 0;
@@ -2419,7 +2834,9 @@ footer {
   }
 
 
-  /* FINAL STATEMENT */
+  /* =====================================================
+     FINAL STATEMENT
+  ===================================================== */
 
   .about-final-statement {
     margin-top: 55px;
@@ -2432,31 +2849,6 @@ footer {
 }
 
 
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hero-content > p,
-  .hero-content > h1,
-  .hero-content > .hero-actions {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .scroll-service {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
-
-  .about-main-image,
-  .about-services-image {
-    transition: none;
-  }
-}
 /* =========================================================
    CONTACT PAGE
 ========================================================= */
@@ -2473,7 +2865,6 @@ footer {
 
 .contact-page-hero {
   position: relative;
-
   min-height: 330px;
 
   display: flex;
@@ -2567,20 +2958,53 @@ footer {
 
 
 /* =========================================================
+   CONTACT HERO TEXT ANIMATION
+========================================================= */
+
+.contact-page-hero .eyebrow,
+.contact-page-hero h1,
+.contact-page-hero .contact-hero-text {
+  opacity: 0;
+  animation: contactTextIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.contact-page-hero .eyebrow {
+  animation-delay: 0.1s;
+}
+
+.contact-page-hero h1 {
+  animation-delay: 0.2s;
+}
+
+.contact-page-hero .contact-hero-text {
+  animation-delay: 0.35s;
+}
+
+@keyframes contactTextIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================================
    CONTACT INFORMATION CARDS
 ========================================================= */
 
 .contact-info-section {
   padding: 24px 0 0;
-
   background: #ffffff;
 }
 
 .contact-info-grid {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 18px;
 }
 
@@ -2653,6 +3077,23 @@ footer {
   color: var(--red);
 }
 
+.contact-info-link {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-info-link:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.contact-info-link strong {
+  color: #555555;
+}
+
 
 /* =========================================================
    CONTACT MAIN
@@ -2660,17 +3101,13 @@ footer {
 
 .contact-main {
   padding: 50px 0 85px;
-
   background: #ffffff;
 }
 
 .contact-main-grid {
   display: grid;
-
   grid-template-columns: 1fr 1fr;
-
   gap: 55px;
-
   align-items: start;
 }
 
@@ -2724,9 +3161,7 @@ footer {
 
 .contact-form {
   display: grid;
-
   grid-template-columns: 1fr;
-
   gap: 10px;
 }
 
@@ -2759,7 +3194,6 @@ footer {
 
 .contact-form textarea {
   min-height: 115px;
-
   resize: vertical;
 }
 
@@ -2921,7 +3355,6 @@ footer {
 
   .contact-main-grid {
     grid-template-columns: 1fr;
-
     gap: 50px;
   }
 
@@ -2939,7 +3372,6 @@ footer {
 
   .contact-page-hero {
     min-height: 430px;
-
     background-position: center;
   }
 
@@ -2968,9 +3400,7 @@ footer {
 
   .contact-hero-text {
     max-width: 310px;
-
     font-size: 14px;
-
     line-height: 1.65;
   }
 
@@ -2983,22 +3413,18 @@ footer {
 
   .contact-info-grid {
     grid-template-columns: 1fr 1fr;
-
     gap: 12px;
   }
 
   .contact-info-card {
     min-height: 95px;
-
     padding: 14px;
-
     gap: 10px;
   }
 
   .contact-info-icon {
     width: 36px;
     height: 36px;
-
     flex-basis: 36px;
   }
 
@@ -3012,14 +3438,14 @@ footer {
   }
 
   .contact-info-card a,
-.contact-info-card strong {
-  display: block;
-  color: #333333;
-  text-decoration: none;
-  font-size: 14px;
-  line-height: 1.4;
-  font-weight: 600;
-}
+  .contact-info-card strong {
+    display: block;
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
 
 
   /* MAIN */
@@ -3030,7 +3456,6 @@ footer {
 
   .contact-main-grid {
     grid-template-columns: 1fr;
-
     gap: 45px;
   }
 
@@ -3061,62 +3486,44 @@ footer {
     gap: 12px;
   }
 
- .office-hours > div {
+  .office-hours > div {
     flex-direction: column;
-
     gap: 2px;
-
     margin-bottom: 12px;
   }
 }
-.contact-info-link {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
 
-.contact-info-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-}
 
-.contact-info-link strong {
-  color: #555555;
-}
-.about-story-visual,
-.why-us-image {
-  display: none;
-}
 /* =========================================================
-   CONTACT HERO TEXT ANIMATION
+   REDUCED MOTION
 ========================================================= */
 
-.contact-page-hero .eyebrow,
-.contact-page-hero h1,
-.contact-page-hero .contact-hero-text {
-  opacity: 0;
-  animation: contactTextIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
+@media (prefers-reduced-motion: reduce) {
 
-.contact-page-hero .eyebrow {
-  animation-delay: 0.1s;
-}
-
-.contact-page-hero h1 {
-  animation-delay: 0.2s;
-}
-
-.contact-page-hero .contact-hero-text {
-  animation-delay: 0.35s;
-}
-
-@keyframes contactTextIn {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
+  .hero-content > p,
+  .hero-content > h1,
+  .hero-content > .hero-actions {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 
-  to {
+  .scroll-service {
     opacity: 1;
-    transform: translateX(0);
+    transform: none;
+    transition: none;
+  }
+
+  .about-main-image,
+  .about-services-image {
+    transition: none;
+  }
+
+  .contact-page-hero .eyebrow,
+  .contact-page-hero h1,
+  .contact-page-hero .contact-hero-text {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
