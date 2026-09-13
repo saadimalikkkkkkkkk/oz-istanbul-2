@@ -932,7 +932,6 @@ h2 {
 
 /* =========================================================
    PREMIUM FOOTER
-   EVERYTHING IS INSIDE ONE UNIFIED FOOTER BOX
 ========================================================= */
 
 .site-footer {
@@ -950,12 +949,14 @@ h2 {
   padding-bottom: 0;
   border-top: 1px solid rgba(255,255,255,0.22);
 }
+
 .footer-logo-image {
   display: block;
   width: 150px;
   height: auto;
   object-fit: contain;
 }
+
 
 /* =========================================================
    BRAND
@@ -1124,34 +1125,26 @@ h2 {
 
 /* =========================================================
    TRUST STRIP
-   PART OF THE SAME FOOTER BOX
 ========================================================= */
 
 .footer-trust {
   grid-column: 1 / -1;
-
   display: flex;
   align-items: center;
-
   width: 100%;
-
   margin-top: 45px;
   padding: 25px 0;
-
   border-top: 1px solid rgba(255,255,255,0.16);
   border-bottom: 1px solid rgba(255,255,255,0.16);
 }
 
 .footer-trust > div {
   flex: 1;
-
   display: flex;
   align-items: center;
   gap: 13px;
-
   min-height: 45px;
   padding: 0 35px;
-
   border-right: 1px solid rgba(255,255,255,0.16);
 }
 
@@ -1172,16 +1165,13 @@ h2 {
 .footer-trust span {
   display: flex;
   flex-direction: column;
-
   color: #777777;
-
   font-size: 11px;
   line-height: 1.5;
 }
 
 .footer-trust strong {
   color: #ffffff;
-
   font-size: 13px;
   font-weight: 600;
 }
@@ -1329,15 +1319,16 @@ h2 {
 }
 
 .about-story-inner {
+  width: 100%;
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 70px;
-  align-items: stretch;
+  align-items: start;
 }
 
 
 /* =========================================================
-   LEFT IMAGE COLUMN
+   ABOUT STORY — LEFT IMAGES
 ========================================================= */
 
 .about-story-visual {
@@ -1346,16 +1337,21 @@ h2 {
   flex-direction: column;
   gap: 25px;
   min-width: 0;
+  visibility: visible;
+  opacity: 1;
 }
 
 .about-main-image,
 .about-services-image {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
+  max-width: 100%;
   object-fit: contain;
   object-position: center;
   flex-shrink: 0;
+  visibility: visible;
+  opacity: 1;
 }
 
 .about-services-image {
@@ -1366,7 +1362,7 @@ h2 {
 
 
 /* =========================================================
-   RIGHT TEXT COLUMN
+   ABOUT STORY — RIGHT TEXT
 ========================================================= */
 
 .about-story-content {
@@ -1374,85 +1370,50 @@ h2 {
   height: 100%;
   margin: 0;
   padding: 0;
-
   display: flex;
   flex-direction: column;
   align-self: stretch;
 }
 
-
-/* =========================================================
-   ABOUT EYEBROW
-========================================================= */
-
 .about-story-content .eyebrow {
   flex: 0 0 auto;
-
   margin: 0 0 18px;
-
   color: var(--red);
-
   font-size: 14px;
   line-height: 1.35;
   font-weight: 700;
-
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-
-/* =========================================================
-   ABOUT TITLE
-========================================================= */
-
 .about-story-content h2 {
   flex: 0 0 auto;
-
   margin: 0 0 25px;
-
   color: #17181c;
-
   font-size: clamp(40px, 3.4vw, 56px);
   line-height: 1.05;
-
   font-weight: 700;
-
   letter-spacing: -0.04em;
 }
 
-
-/* =========================================================
-   ABOUT TEXT
-========================================================= */
-
 .about-story-copy {
   flex: 1 1 auto;
-
   width: 100%;
   min-height: 0;
-
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
-
   overflow: visible;
 }
 
 .about-story-copy p {
   flex: 0 0 auto;
-
   margin: 0;
-
   color: #252525;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 15.5px;
   line-height: 1.45;
-
   font-weight: 400;
-
   letter-spacing: -0.005em;
 }
 
@@ -1687,7 +1648,6 @@ h2 {
   color: #171717;
   font-size: 22px;
   line-height: 1.25;
-  font-weight: 700;
 }
 
 .why-oz-point p {
@@ -1939,6 +1899,7 @@ h2 {
     width: min(calc(100% - 42px), 760px);
   }
 
+
   /* HEADER */
 
   .nav-shell {
@@ -2130,6 +2091,22 @@ h2 {
     gap: 45px;
   }
 
+  .about-story-visual {
+    display: flex;
+    width: 100%;
+  }
+
+  .about-main-image,
+  .about-services-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .about-services-image {
+    width: 120%;
+  }
+
   .about-story-copy p {
     font-size: 14px;
   }
@@ -2200,9 +2177,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     HEADER
-  ===================================================== */
+  /* HEADER */
 
   .nav-shell {
     height: 70px;
@@ -2224,9 +2199,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     HERO
-  ===================================================== */
+  /* HERO */
 
   .hero {
     min-height: 500px;
@@ -2298,9 +2271,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     GENERAL
-  ===================================================== */
+  /* GENERAL */
 
   .section {
     padding: 72px 0;
@@ -2316,9 +2287,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     HOMEPAGE ABOUT
-  ===================================================== */
+  /* HOMEPAGE ABOUT */
 
   .about-images {
     height: 340px;
@@ -2351,9 +2320,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     CORE
-  ===================================================== */
+  /* CORE */
 
   .service-grid {
     grid-template-columns: 1fr;
@@ -2369,9 +2336,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     CONSULTANCY
-  ===================================================== */
+  /* CONSULTANCY */
 
   .consultancy-grid {
     grid-template-columns: 1fr;
@@ -2390,9 +2355,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     GLOBAL
-  ===================================================== */
+  /* GLOBAL */
 
   .global {
     padding: 72px 0 80px;
@@ -2430,9 +2393,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     PROCESS
-  ===================================================== */
+  /* PROCESS */
 
   .process {
     padding-top: 70px;
@@ -2469,9 +2430,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     CONTACT
-  ===================================================== */
+  /* CONTACT */
 
   .contact {
     padding: 72px 0;
@@ -2482,9 +2441,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     FOOTER
-  ===================================================== */
+  /* FOOTER */
 
   .footer-main {
     grid-template-columns: 1fr;
@@ -2505,13 +2462,15 @@ h2 {
     display: none;
   }
 
+  .footer-logo-image {
+    width: 130px;
+  }
+
   .footer-trust {
     grid-column: 1;
-
     display: grid;
     grid-template-columns: 1fr;
     gap: 22px;
-
     margin-top: 15px;
     padding: 28px 0;
   }
@@ -2522,11 +2481,7 @@ h2 {
     padding: 0;
     border-right: none;
   }
-@media (max-width: 700px) {
-  .footer-logo-image {
-    width: 130px;
-  }
-}
+
   .footer-bottom-inner {
     min-height: 0;
     display: flex;
@@ -2549,9 +2504,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     ABOUT HERO
-  ===================================================== */
+  /* ABOUT HERO */
 
   .about-page-hero {
     min-height: 430px;
@@ -2568,7 +2521,7 @@ h2 {
 
 
   /* =====================================================
-     ABOUT STORY
+     ABOUT STORY — HIDE IMAGES ONLY ON MOBILE
   ===================================================== */
 
   .about-story {
@@ -2581,13 +2534,12 @@ h2 {
   }
 
   .about-story-visual {
-    gap: 25px;
+    display: none;
   }
 
   .about-main-image,
   .about-services-image {
-    width: 100%;
-    height: auto;
+    display: none;
   }
 
   .about-story-content {
@@ -2622,9 +2574,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     ABOUT EXPERIENCE
-  ===================================================== */
+  /* ABOUT EXPERIENCE */
 
   .about-experience {
     padding: 75px 0;
@@ -2645,9 +2595,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     ABOUT VALUES
-  ===================================================== */
+  /* ABOUT VALUES */
 
   .about-values {
     padding-top: 75px;
@@ -2675,9 +2623,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     WHY ÖZ ISTANBUL
-  ===================================================== */
+  /* WHY ÖZ ISTANBUL */
 
   .why-oz {
     padding: 70px 0 80px;
@@ -2738,9 +2684,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     MISSION
-  ===================================================== */
+  /* MISSION */
 
   .about-mission {
     padding: 80px 0;
@@ -2755,9 +2699,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     WELCOME
-  ===================================================== */
+  /* WELCOME */
 
   .about-welcome {
     padding: 70px 0 80px;
@@ -2791,9 +2733,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     SCROLL SERVICES
-  ===================================================== */
+  /* SCROLL SERVICES */
 
   .scroll-services {
     width: 100%;
@@ -2820,9 +2760,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     STATEMENT
-  ===================================================== */
+  /* STATEMENT */
 
   .about-statement {
     margin: 45px 0;
@@ -2834,9 +2772,7 @@ h2 {
   }
 
 
-  /* =====================================================
-     FINAL STATEMENT
-  ===================================================== */
+  /* FINAL STATEMENT */
 
   .about-final-statement {
     margin-top: 55px;
@@ -2866,23 +2802,18 @@ h2 {
 .contact-page-hero {
   position: relative;
   min-height: 330px;
-
   display: flex;
   align-items: center;
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   overflow: hidden;
 }
 
 .contact-page-hero::before {
   content: '';
-
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       90deg,
@@ -2890,54 +2821,39 @@ h2 {
       rgba(255,255,255,0.68) 5%,
       rgba(255,255,255,0.08) 100%
     );
-
   z-index: 1;
 }
 
 .contact-page-hero-inner {
   position: relative;
   z-index: 2;
-
   padding: 55px 0;
 }
 
 .contact-page-hero .eyebrow {
   margin: 0 0 14px;
-
   font-size: 13px;
   line-height: 1.3;
-
   letter-spacing: 0.15em;
-
   color: var(--red);
 }
 
 .contact-page-hero .eyebrow::after {
   content: '';
-
   display: inline-block;
-
   width: 45px;
-
   margin-left: 12px;
-
   vertical-align: middle;
-
   border-top: 2px solid var(--red);
 }
 
 .contact-page-hero h1 {
   margin: 0;
-
   color: #17181c;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: clamp(48px, 5vw, 72px);
   line-height: 0.98;
-
   font-weight: 700;
-
   letter-spacing: -0.045em;
 }
 
@@ -2947,11 +2863,8 @@ h2 {
 
 .contact-hero-text {
   max-width: 480px;
-
   margin: 18px 0 0;
-
   color: #020202;
-
   font-size: 14px;
   line-height: 1.65;
 }
@@ -3010,18 +2923,12 @@ h2 {
 
 .contact-info-card {
   min-height: 92px;
-
   display: flex;
   align-items: center;
-
   gap: 14px;
-
   padding: 18px;
-
   background: #ffffff;
-
   border: 1px solid #eeeeee;
-
   box-shadow:
     0 5px 20px rgba(0,0,0,0.06);
 }
@@ -3029,15 +2936,11 @@ h2 {
 .contact-info-icon {
   width: 42px;
   height: 42px;
-
   flex: 0 0 42px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   background: var(--red);
   color: #ffffff;
 }
@@ -3048,28 +2951,20 @@ h2 {
 
 .contact-info-card span {
   display: block;
-
   margin-bottom: 3px;
-
   color: #171717;
-
   font-size: 12px;
   line-height: 1.3;
-
   font-weight: 700;
 }
 
 .contact-info-card a,
 .contact-info-card strong {
   display: block;
-
   color: #555555;
-
   text-decoration: none;
-
   font-size: 13px;
   line-height: 1.4;
-
   font-weight: 400;
 }
 
@@ -3118,43 +3013,31 @@ h2 {
 
 .contact-form-area .eyebrow {
   margin: 0 0 12px;
-
   font-size: 13px;
   line-height: 1.3;
-
   letter-spacing: 0.14em;
 }
 
 .contact-form-area .eyebrow::after {
   content: '';
-
   display: inline-block;
-
   width: 45px;
-
   margin-left: 12px;
-
   vertical-align: middle;
-
   border-top: 2px solid var(--red);
 }
 
 .contact-form-area h2 {
   margin: 0;
-
   color: #17181c;
-
   font-size: 40px;
   line-height: 1.05;
-
   letter-spacing: -0.035em;
 }
 
 .contact-form-intro {
   margin: 12px 0 18px;
-
   color: #666666;
-
   font-size: 14px;
   line-height: 1.6;
 }
@@ -3168,21 +3051,13 @@ h2 {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-
   padding: 12px 14px;
-
   border: 1px solid #dddddd;
-
   background: #ffffff;
-
   color: #222222;
-
   font-family: Arial, Helvetica, sans-serif;
-
   font-size: 13px;
-
   outline: none;
-
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -3200,7 +3075,6 @@ h2 {
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--red);
-
   box-shadow:
     0 0 0 2px rgba(255,0,0,0.06);
 }
@@ -3212,13 +3086,9 @@ h2 {
 
 .contact-form .button {
   justify-self: start;
-
   margin-top: 2px;
-
   min-width: 106px;
-
   padding: 11px 17px;
-
   font-size: 11px;
 }
 
@@ -3234,20 +3104,15 @@ h2 {
 .contact-map {
   width: 100%;
   height: 300px;
-
   overflow: hidden;
-
   border: 1px solid #eeeeee;
-
   background: #eeeeee;
 }
 
 .contact-map iframe {
   width: 100%;
   height: 100%;
-
   display: block;
-
   border: 0;
 }
 
@@ -3258,17 +3123,13 @@ h2 {
 
 .office-card {
   margin-top: 15px;
-
   padding: 22px;
-
   background: #f7f7f7;
 }
 
 .office-row {
   display: flex;
-
   gap: 18px;
-
   padding: 5px 0 20px;
 }
 
@@ -3278,24 +3139,18 @@ h2 {
 
 .office-icon {
   width: 32px;
-
   flex: 0 0 32px;
-
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
   color: var(--red);
 }
 
 .office-row h3 {
   margin: 0 0 6px;
-
   color: #171717;
-
   font-size: 14px;
   line-height: 1.3;
-
   font-weight: 700;
 }
 
@@ -3314,9 +3169,7 @@ h2 {
 .office-hours > div {
   display: flex;
   justify-content: space-between;
-
   gap: 20px;
-
   margin-bottom: 8px;
 }
 
@@ -3327,10 +3180,8 @@ h2 {
 .office-hours span,
 .office-hours strong {
   color: #555555;
-
   font-size: 13px;
   line-height: 1.4;
-
   font-weight: 400;
 }
 
