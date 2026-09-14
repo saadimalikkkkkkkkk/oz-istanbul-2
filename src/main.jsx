@@ -904,7 +904,7 @@ function ContactPage() {
 
           <div
   className="contact-info-card contact-info-link"
-  onClick={() => window.location.href = 'tel:+905467270777'}
+  onClick={() => window.location.href = 'tel:+902127270777'}
 >
   <div className="contact-info-icon">
     <Phone size={21} />
