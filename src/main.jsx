@@ -911,7 +911,7 @@ function ContactPage() {
   </div>
   <div>
     <span>Phone</span>
-    <strong>+90 546 727 07 77</strong>
+    <strong>+90 212 727 07 77</strong>
   </div>
 </div>
 
