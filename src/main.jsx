@@ -1614,12 +1614,9 @@ function HomePage() {
 
           <div className="center">
 
-            <a
-              className="button outline"
-              href="#consultancy"
-            >
-              Explore All Services <Arrow />
-            </a>
+           <a className="button" href="/services">
+  Explore All Services <Arrow />
+</a>
 
           </div>
 
