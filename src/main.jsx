@@ -30,6 +30,7 @@ import companyFormationImage from './assets/company-formation-business-setup.png
 import investmentProjectImage from './assets/investment-project-consultancy.png';
 import officialTranslationImage from './assets/official-translation-documentation.png';
 import ozIstanbulLogo from './assets/hero-black.jpg';
+import servicesBackground from './assets/services-background.png';
 import {
   UsersRound,
   ClipboardList,
@@ -51,7 +52,15 @@ import {
   Globe2,
   ShieldCheck,
   BarChart3,
-  ChevronUp
+  ChevronUp,
+  Building,
+  TrendingUp,
+  GraduationCap,
+  Globe,
+  Plane,
+  BriefcaseBusiness,
+  Handshake,
+  Languages
 } from 'lucide-react';
 
 const IMG = 'https://ozistanbul.com/wp-content/uploads';
@@ -218,9 +227,9 @@ function Header() {
             About
           </a>
 
-          <a href="/#businesses">
-            Services <b>⌄</b>
-          </a>
+          <a href="/services">
+  Services
+</a>
 
           <a href="/contact">
   Contact
@@ -229,11 +238,11 @@ function Header() {
         </nav>
 
         <a
-          className="button nav-button"
-          href="/#contact"
-        >
-          Apply Now <Arrow />
-        </a>
+  className="button nav-button"
+  href="/contact"
+>
+  Apply Now <Arrow />
+</a>
 
       </div>
 
@@ -370,22 +379,32 @@ function AboutPage() {
 
       {/* ABOUT HERO */}
 
-      <section
-        className="about-page-hero"
-        style={{
-          backgroundImage: `url(${aboutBackground})`
-        }}
-      >
+<section
+  className="about-page-hero"
+  style={{
+    backgroundImage: `url(${aboutBackground})`
+  }}
+>
+  <div className="shell about-page-hero-inner">
 
-        <div className="about-page-hero-inner">
+    <p className="eyebrow">
+      About Öz Istanbul
+    </p>
 
-          <h1>
-            ABOUT <span>ÖZ ISTANBUL</span>
-          </h1>
+    <h1>
+      A Global Vision
+      <br />
+      Rooted in Trust
+    </h1>
 
-        </div>
+    <p className="hero-text">
+      Our story is built on people, partnerships
+      <br />
+      and a commitment to a stronger tomorrow.
+    </p>
 
-      </section>
+  </div>
+</section>
 
 
       {/* ABOUT STORY */}
@@ -397,20 +416,12 @@ function AboutPage() {
           {/* LEFT IMAGES */}
 
           <div className="about-story-visual">
-
-            <img
-              className="about-main-image"
-              src={aboutLeftImage}
-              alt="Öz Istanbul Group"
-            />
-
-            <img
-              className="about-services-image"
-              src={servicesAboutImage}
-              alt="Öz Istanbul Group Services"
-            />
-
-          </div>
+  <img
+    className="about-services-image"
+    src={servicesAboutImage}
+    alt="Öz Istanbul Group Services"
+  />
+</div>
 
 
           {/* RIGHT CONTENT */}
@@ -491,7 +502,9 @@ function AboutPage() {
               </p>
 
               <p>
-                Experience. Trust. Transparency. Execution. Long-term value.
+                <strong>
+                  Experience. Trust. Transparency. Execution. Long-term value.
+                </strong>
               </p>
 
               <p>
@@ -820,6 +833,34 @@ function AboutPage() {
 ========================================================= */
 
 function ContactPage() {
+  const [contactStatus, setContactStatus] = useState('');
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setContactStatus('sending');
+
+    const form = e.currentTarget;
+
+    try {
+      const response = await fetch('https://formspree.io/f/xppzgnvo', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        setContactStatus('success');
+      } else {
+        setContactStatus('error');
+      }
+    } catch {
+      setContactStatus('error');
+    }
+  };
+
   return (
     <main className="contact-page">
 
@@ -947,44 +988,69 @@ function ContactPage() {
 
 
             <form
-              className="contact-form"
-              onSubmit={(e) => e.preventDefault()}
-            >
+  className="contact-form"
+  onSubmit={handleContactSubmit}
+>
 
-              <input
-                type="text"
-                placeholder="Your Name *"
-              />
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name *"
+    required
+  />
 
-              <input
-                type="email"
-                placeholder="Your Email *"
-              />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email *"
+    required
+  />
 
-              <input
-                type="tel"
-                placeholder="Phone Number"
-              />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+  />
 
-              <input
-                type="text"
-                placeholder="Subject *"
-              />
+  <input
+    type="text"
+    name="subject"
+    placeholder="Subject *"
+    required
+  />
 
-              <textarea
-                placeholder="Your Message *"
-                rows="6"
-              ></textarea>
+  <textarea
+    name="message"
+    placeholder="Your Message *"
+    rows="6"
+    required
+  ></textarea>
 
-              <button
-                type="submit"
-                className="button"
-              >
-                Send Message
-                <Arrow />
-              </button>
+  <button
+    type="submit"
+    className="button"
+    disabled={contactStatus === 'sending'}
+  >
+    {contactStatus === 'sending'
+      ? 'Sending...'
+      : 'Send Message'}
 
-            </form>
+    {contactStatus !== 'sending' && <Arrow />}
+  </button>
+
+  {contactStatus === 'success' && (
+    <p className="form-success">
+  Thank you for getting in touch. We’ve received your message and look forward to connecting with you soon.
+</p>
+  )}
+
+  {contactStatus === 'error' && (
+    <p className="form-error">
+      Something went wrong. Please try again.
+    </p>
+  )}
+
+</form>
 
           </div>
 
@@ -1083,10 +1149,281 @@ function ContactPage() {
   );
 }
 /* =========================================================
+   SERVICES PAGE
+========================================================= */
+
+const servicesPageItems = [
+  {
+    title: 'Real Estate Development',
+    description:
+      'Designing and developing modern living and working spaces for stronger communities.',
+    image: realEstateImage,
+    icon: Building
+  },
+  {
+    title: 'Real Estate Investment',
+    description:
+      'Creating long-term value through strategic real estate investments in global markets.',
+    image: constructionImage,
+    icon: TrendingUp
+  },
+  {
+    title: 'Education',
+    description:
+      'Investing in people through quality education and international learning opportunities.',
+    image: educationImage,
+    icon: GraduationCap
+  },
+  {
+    title: 'International Trade',
+    description:
+      'Connecting markets and facilitating trade across borders through reliable global networks.',
+    image: importExportImage,
+    icon: Globe
+  },
+  {
+    title: 'Immigration Services',
+    description:
+      'Guiding individuals and families through international mobility and relocation opportunities.',
+    image: citizenshipResidencyImage,
+    icon: FileUser
+  },
+  {
+    title: 'Tourism & Travel',
+    description:
+      'Delivering memorable travel experiences and tailored tourism services worldwide.',
+    image: tourismImage,
+    icon: Plane
+  },
+  {
+    title: 'Business & Investment',
+    description:
+      'Providing strategic support to help businesses grow, invest and succeed internationally.',
+    image: businessInvestmentImage,
+    icon: BriefcaseBusiness
+  },
+  {
+    title: 'Translation & Documentation',
+    description:
+      'Bridging cultures with accurate, professional and reliable translation services.',
+    image: officialTranslationImage,
+    icon: Languages
+  }
+];
+
+
+function ServicesPage() {
+  return (
+    <main className="services-page">
+
+      {/* =====================================================
+          SERVICES HERO
+      ===================================================== */}
+
+      <section
+  className="services-page-hero"
+  style={{
+    backgroundImage: `url(${servicesBackground})`
+  }}
+>
+
+        <div className="services-page-hero-overlay"></div>
+
+        <div className="shell services-page-hero-inner">
+
+          <p className="eyebrow">
+            OUR SERVICES
+          </p>
+
+          <h1>
+            Integrated Solutions
+            <br />
+            for a Global Future
+          </h1>
+
+          <p className="services-hero-text">
+            Building businesses. Developing investments.
+            <br />
+            Creating opportunities.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          INTRO
+      ===================================================== */}
+
+      <section className="services-intro">
+
+        <div className="shell">
+
+          <div className="services-intro-inner">
+
+            <div className="services-side-line"></div>
+
+            <div className="services-intro-content">
+
+              <p className="eyebrow">
+                OUR SERVICES
+              </p>
+
+              <h2>
+                Diverse Industries. Real Opportunities.
+              </h2>
+
+              <p>
+                At Öz Istanbul Group, we provide a wide range of
+                services across key industries, combining international
+                experience with local expertise to create real value
+                for our clients, partners, and communities.
+              </p>
+
+            </div>
+
+            <div className="services-side-line"></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          SERVICES GRID
+      ===================================================== */}
+
+      <section className="services-grid-section">
+
+        <div className="shell">
+
+          <div className="services-page-grid">
+
+            {servicesPageItems.map((service, index) => {
+
+              const Icon = service.icon;
+
+              return (
+                <article
+                  className="services-page-card"
+                  key={service.title}
+                >
+
+                  <div className="services-page-card-image">
+
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      loading="lazy"
+                    />
+
+                  </div>
+
+                  <div className="services-page-card-content">
+
+                    <div className="services-page-icon">
+                      <Icon
+                        size={21}
+                        strokeWidth={1.8}
+                      />
+                    </div>
+
+                    <h3>
+                      {service.title}
+                    </h3>
+
+                    <p>
+                      {service.description}
+                    </p>
+
+                  </div>
+
+                </article>
+              );
+            })}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CTA
+      ===================================================== */}
+
+      <section className="services-cta">
+
+        <div className="services-cta-map">
+          <Globe2 size={520} strokeWidth={0.5} />
+        </div>
+
+        <div className="shell services-cta-inner">
+
+          <p className="eyebrow">
+            LET&apos;S BUILD TOGETHER
+          </p>
+
+          <h2>
+            Ready to Explore Opportunities?
+          </h2>
+
+          <p>
+            Get in touch with our team to learn more about
+            our services and how we can support your goals.
+          </p>
+
+          <a
+            className="button"
+            href="/contact"
+          >
+            Contact Us <Arrow />
+          </a>
+
+        </div>
+
+      </section>
+
+    </main>
+  );
+}
+/* =========================================================
    HOME PAGE
 ========================================================= */
 
 function HomePage() {
+  const [homeStatus, setHomeStatus] = useState('');
+
+  const handleHomeSubmit = async (e) => {
+    e.preventDefault();
+    setHomeStatus('sending');
+
+    const form = e.currentTarget;
+
+    try {
+      const response = await fetch('https://formspree.io/f/xppzgnvo', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        setHomeStatus('success');
+      } else {
+        setHomeStatus('error');
+      }
+    } catch {
+      setHomeStatus('error');
+    }
+  };
+
   return (
     <main id="home">
 
@@ -1545,49 +1882,69 @@ function HomePage() {
 
 
           <form
-            onSubmit={(e) => e.preventDefault()}
-          >
+  onSubmit={handleHomeSubmit}
+>
 
-            <input
-              placeholder="Your Name*"
-            />
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name*"
+    required
+  />
 
-            <input
-              placeholder="WhatsApp Number*"
-            />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="WhatsApp Number*"
+    required
+  />
 
-            <input
-              placeholder="Email Address*"
-            />
+  <input
+  type="email"
+  name="email"
+  placeholder="Email Address*"
+  required
+/>
 
-            <select defaultValue="">
+<input
+  type="text"
+  name="subject"
+  placeholder="Subject*"
+  required
+/>
 
-              <option
-                value=""
-                disabled
-              >
-                Choose a service
-              </option>
+<textarea
+  name="message"
+  placeholder="Message*"
+  rows="4"
+  required
+></textarea>
 
-              <option>
-                Investment
-              </option>
+  <button
+    type="submit"
+    className="button"
+    disabled={homeStatus === 'sending'}
+  >
+    {homeStatus === 'sending'
+      ? 'Sending...'
+      : 'Send Message'}
 
-              <option>
-                Education
-              </option>
+    {homeStatus !== 'sending' && <Arrow />}
+  </button>
 
-              <option>
-                Business setup
-              </option>
+  {homeStatus === 'success' && (
+    <p className="form-success">
+      Thank you. Your message has been sent successfully.
+    </p>
+  )}
 
-            </select>
+  {homeStatus === 'error' && (
+    <p className="form-error">
+      Something went wrong. Please try again.
+    </p>
+  )}
 
-            <button className="button">
-              Send Message <Arrow />
-            </button>
-
-          </form>
+</form>
 
         </div>
 
@@ -1637,37 +1994,43 @@ function Footer() {
 
           <div className="footer-socials">
 
-            <a
-              href="#"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={18} />
-            </a>
+  <a
+    href="https://www.linkedin.com/company/ozistanbul"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+  >
+    <Linkedin size={18} />
+  </a>
 
-            <a
-              href="#"
-              aria-label="Instagram"
-            >
-              <Instagram size={18} />
-            </a>
+  <a
+    href="https://www.instagram.com/ozistanbulturkiye/?hl=en"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <Instagram size={18} />
+  </a>
 
-            <a
-              href="#"
-              aria-label="YouTube"
-            >
-              <Youtube size={18} />
-            </a>
+  <a
+    href="https://www.youtube.com/@ozistanbulturkey"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube"
+  >
+    <Youtube size={18} />
+  </a>
 
-            <a
-              href="https://wa.me/905467270777"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle size={18} />
-            </a>
+  <a
+    href="https://wa.me/905467270777"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+  >
+    <MessageCircle size={18} />
+  </a>
 
-          </div>
+</div>
 
         </div>
 
@@ -1688,9 +2051,9 @@ function Footer() {
             About Us
           </a>
 
-          <a href="/#businesses">
-            Services
-          </a>
+          <a href="/services">
+  Services
+</a>
 
           <a href="/contact">
             Contact Us
@@ -1881,6 +2244,8 @@ function App() {
 
       {path === '/about' ? (
         <AboutPage />
+      ) : path === '/services' ? (
+        <ServicesPage />
       ) : path === '/contact' ? (
         <ContactPage />
       ) : (
