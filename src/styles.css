@@ -317,7 +317,7 @@ h2 em,
   left: 50%;
   bottom: 0px;
   z-index: 3;
-  width: 1000px;
+  width: 600px;
   max-width: 72%;
   transform: translateX(-50%);
 }
