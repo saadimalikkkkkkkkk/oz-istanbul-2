@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 
@@ -35,7 +35,10 @@ import ozIstanbulLogo from './assets/hero-black.jpg';
 import servicesBackground from './assets/services-background.png';
 import citizenshipBanner from './assets/turkish-citizenship-banner.png';
 import investmentHero from './assets/investment-hero.png';
-
+import governmentBondImage from './assets/government-bond.png';
+import companyInvestmentImage from './assets/company-investment.png';
+import bankDepositImage from './assets/bank-deposit.png';
+import realEstateInvestmentImage from './assets/real-estate-investment.png';
 import {
   UsersRound,
   ClipboardList,
@@ -229,6 +232,12 @@ const citizenshipInvestmentOptions = [
     amount: '$400,000',
     description:
       'Purchase qualifying real estate in Türkiye and maintain the investment for at least 3 years.',
+    details: [
+      ['Minimum investment', '$400,000+'],
+      ['Required period', '3 Years'],
+      ['Investment type', 'Real Estate']
+    ],
+    image: realEstateInvestmentImage,
     icon: Building
   },
   {
@@ -237,6 +246,12 @@ const citizenshipInvestmentOptions = [
     amount: '$500,000',
     description:
       'Deposit at least $500,000 in a Turkish bank and maintain the required investment period.',
+    details: [
+      ['Minimum investment', '$500,000+'],
+      ['Required period', '3 Years'],
+      ['Investment type', 'Bank Deposit']
+    ],
+    image: bankDepositImage,
     icon: BarChart3
   },
   {
@@ -245,6 +260,12 @@ const citizenshipInvestmentOptions = [
     amount: '$500,000',
     description:
       'Invest in qualifying Turkish government bonds and maintain the investment for at least 3 years.',
+    details: [
+      ['Minimum investment', '$500,000+'],
+      ['Required period', '3 Years'],
+      ['Investment type', 'Government Bonds']
+    ],
+    image: governmentBondImage,
     icon: ShieldCheck
   },
   {
@@ -253,6 +274,12 @@ const citizenshipInvestmentOptions = [
     amount: '$500,000',
     description:
       'Make a qualifying capital investment in a Turkish company under the applicable citizenship program.',
+    details: [
+      ['Minimum investment', '$500,000+'],
+      ['Required period', 'As required'],
+      ['Investment type', 'Company Investment']
+    ],
+    image: companyInvestmentImage,
     icon: BriefcaseBusiness
   }
 ];
@@ -291,6 +318,62 @@ function Logo() {
         </small>
       </span>
     </a>
+  );
+}
+
+
+/* =========================================================
+   SCROLL TO TOP
+========================================================= */
+
+function ScrollToTop() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+      const progress =
+        documentHeight > 0
+          ? Math.min(1, Math.max(0, window.scrollY / documentHeight))
+          : 0;
+
+      setScrollProgress(progress);
+    };
+
+    updateScrollProgress();
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    window.addEventListener('resize', updateScrollProgress);
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress);
+      window.removeEventListener('resize', updateScrollProgress);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <button
+      type="button"
+      className={`scroll-to-top${scrollProgress > 0.02 ? ' is-visible' : ''}`}
+      style={{ '--scroll-progress': scrollProgress }}
+      onClick={scrollToTop}
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <span className="scroll-to-top-track" aria-hidden="true">
+        <span className="scroll-to-top-progress"></span>
+      </span>
+
+      <span className="scroll-to-top-icon" aria-hidden="true">↑</span>
+    </button>
   );
 }
 
@@ -942,6 +1025,72 @@ function AboutPage() {
 ========================================================= */
 
 function InvestmentPage() {
+
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const faqItems = [
+    {
+      number: '01',
+      question: 'How can I obtain Turkish citizenship?',
+      answer:
+        'You can obtain Turkish citizenship through qualifying investment options such as real estate purchase, bank deposit, government bonds, or establishing a company. We guide you through the process from selecting the right option to completing your application.'
+    },
+    {
+      number: '02',
+      question: 'What is the minimum investment required?',
+      answer:
+        'The minimum qualifying investment depends on the investment route you choose. Our team can explain the current requirements and help you identify the option that best fits your circumstances.'
+    },
+    {
+      number: '03',
+      question: 'Can my family also get Turkish citizenship?',
+      answer:
+        'Eligible family members can generally be included in the citizenship application under the applicable programme requirements. We can explain who may qualify and the documentation required.'
+    },
+    {
+      number: '04',
+      question: 'How long does the process take?',
+      answer:
+        'The overall timeline depends on the investment route, documentation, due diligence, and application process. We coordinate the required steps and keep you informed throughout the process.'
+    },
+    {
+      number: '05',
+      question: 'Do I need to live in Türkiye to maintain citizenship?',
+      answer:
+        'Turkish citizenship by investment does not require you to maintain a minimum period of residence in Türkiye under the programme described on this page.'
+    },
+    {
+      number: '06',
+      question: 'Which countries can I travel to visa-free?',
+      answer:
+        'Travel access depends on the destination country and its current entry rules. Turkish passport holders have visa-free or visa-on-arrival access to many destinations, and we can provide current guidance for your planned travel.'
+    },
+    {
+      number: '07',
+      question: 'What types of properties qualify?',
+      answer:
+        'Qualifying properties must meet the applicable Turkish citizenship-by-investment requirements. We can help identify suitable properties and coordinate the relevant checks before purchase.'
+    },
+    {
+      number: '08',
+      question: 'What additional services do you provide?',
+      answer:
+        'Our services can include investment consultancy, real estate support, company formation, documentation and translation, education, international mobility, and other business-related solutions.'
+    },
+    {
+      number: '09',
+      question: 'Can you help with property selection?',
+      answer:
+        'Yes. We can assist with identifying and evaluating suitable real estate opportunities based on your investment objectives and the applicable citizenship requirements.'
+    },
+    {
+      number: '10',
+      question: 'Why should I choose Öz Istanbul?',
+      answer:
+        'Öz Istanbul combines international experience, local expertise, an established business network, and practical execution. We focus on long-term relationships and supporting clients throughout their investment journey.'
+    }
+  ];
+
   return (
     <main className="investment-page">
 
@@ -1038,63 +1187,222 @@ function InvestmentPage() {
           </div>
 
 
-          <div className="citizenship-investment-grid">
+          <div className="investment-option-group">
 
-            {citizenshipInvestmentOptions.map((option) => {
+            <div className="investment-group-heading">
+              <div>
+                <p className="eyebrow">
+                  MOST POPULAR
+                </p>
 
-              const Icon = option.icon;
+                <h3>
+                  Most Popular <em>Investment Options.</em>
+                </h3>
+              </div>
 
-              return (
-                <article
-                  className="citizenship-investment-card"
-                  key={option.number}
-                >
-
-                  <div className="citizenship-card-top">
-
-                    <div className="citizenship-card-icon">
-
-                      <Icon
-                        size={34}
-                        strokeWidth={1.7}
-                      />
-
-                    </div>
-
-                    <span>
-                      {option.number}
-                    </span>
-
-                  </div>
+              <p>
+                The most commonly selected investment routes
+                for Turkish citizenship.
+              </p>
+            </div>
 
 
-                  <h3>
-                    {option.title}
-                  </h3>
+            <div className="citizenship-investment-list">
+
+              {citizenshipInvestmentOptions
+                .filter((option) => option.number === '01' || option.number === '02')
+                .map((option) => {
+
+                  const Icon = option.icon;
+
+                  return (
+                    <article
+                      className="citizenship-investment-card"
+                      key={option.number}
+                    >
+
+                      <div className="citizenship-card-content">
+
+                        <div className="citizenship-card-top">
+
+                          <div className="citizenship-card-icon">
+                            <Icon
+                              size={30}
+                              strokeWidth={1.7}
+                            />
+                          </div>
+
+                          <span>
+                            {option.number}
+                          </span>
+
+                        </div>
 
 
-                  <div className="citizenship-card-amount">
-                    {option.amount}
-                  </div>
+                        <h4>
+                          {option.title}
+                        </h4>
 
 
-                  <p>
-                    {option.description}
-                  </p>
+                        <div className="citizenship-card-amount">
+                          {option.amount}
+                        </div>
 
 
-                  <a
-                    href="/contact"
-                    className="citizenship-card-link"
-                  >
-                    Discuss This Option
-                    <Arrow />
-                  </a>
+                        <p className="citizenship-card-description">
+                          {option.description}
+                        </p>
 
-                </article>
-              );
 
-            })}
+                        <div className="citizenship-card-details">
+
+                          {option.details.map(([label, value]) => (
+                            <div
+                              className="citizenship-card-detail"
+                              key={label}
+                            >
+                              <strong>{value}</strong>
+                              <span>{label}</span>
+                            </div>
+                          ))}
+
+                        </div>
+
+
+                        <a
+                          href="/contact"
+                          className="citizenship-card-link"
+                        >
+                          Discuss This Option
+                          <Arrow />
+                        </a>
+
+                      </div>
+
+
+                      <div className="citizenship-card-image">
+                        <img
+                          src={option.image}
+                          alt={option.title}
+                          loading="lazy"
+                        />
+                      </div>
+
+                    </article>
+                  );
+                })}
+
+            </div>
+
+          </div>
+
+
+          <div className="investment-option-group investment-option-group-other">
+
+            <div className="investment-group-heading">
+              <div>
+                <p className="eyebrow">
+                  OTHER OPTIONS
+                </p>
+
+                <h3>
+                  Other <em>Investment Options.</em>
+                </h3>
+              </div>
+
+              <p>
+                Additional investment routes available under
+                the applicable citizenship programme.
+              </p>
+            </div>
+
+
+            <div className="citizenship-investment-list">
+
+              {citizenshipInvestmentOptions
+                .filter((option) => option.number === '03' || option.number === '04')
+                .map((option) => {
+
+                  const Icon = option.icon;
+
+                  return (
+                    <article
+                      className="citizenship-investment-card"
+                      key={option.number}
+                    >
+
+                      <div className="citizenship-card-content">
+
+                        <div className="citizenship-card-top">
+
+                          <div className="citizenship-card-icon">
+                            <Icon
+                              size={30}
+                              strokeWidth={1.7}
+                            />
+                          </div>
+
+                          <span>
+                            {option.number}
+                          </span>
+
+                        </div>
+
+
+                        <h4>
+                          {option.title}
+                        </h4>
+
+
+                        <div className="citizenship-card-amount">
+                          {option.amount}
+                        </div>
+
+
+                        <p className="citizenship-card-description">
+                          {option.description}
+                        </p>
+
+
+                        <div className="citizenship-card-details">
+
+                          {option.details.map(([label, value]) => (
+                            <div
+                              className="citizenship-card-detail"
+                              key={label}
+                            >
+                              <strong>{value}</strong>
+                              <span>{label}</span>
+                            </div>
+                          ))}
+
+                        </div>
+
+
+                        <a
+                          href="/contact"
+                          className="citizenship-card-link"
+                        >
+                          Discuss This Option
+                          <Arrow />
+                        </a>
+
+                      </div>
+
+
+                      <div className="citizenship-card-image">
+                        <img
+                          src={option.image}
+                          alt={option.title}
+                          loading="lazy"
+                        />
+                      </div>
+
+                    </article>
+                  );
+                })}
+
+            </div>
 
           </div>
 
@@ -1346,6 +1654,212 @@ function InvestmentPage() {
 
             </article>
 
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          WHY ÖZ ISTANBUL
+      ===================================================== */}
+
+      <section className="why-oz-investment">
+
+        <div className="shell">
+
+          <div className="why-oz-investment-heading">
+
+            <p className="eyebrow">
+              WHY ÖZ ISTANBUL
+            </p>
+
+            <h2>
+              A Trusted Partner
+              <br />
+              <em>for Your Journey.</em>
+            </h2>
+
+            <p>
+              We combine international experience, local expertise,
+              strong business networks, and hands-on operational
+              knowledge to create real value for our clients.
+            </p>
+
+          </div>
+
+          <div className="why-oz-investment-grid">
+
+            <article className="why-oz-investment-card">
+              <div className="why-oz-investment-icon"><Globe2 size={30} strokeWidth={1.8} /></div>
+              <div>
+                <span className="why-oz-investment-number">01.</span>
+                <h3>International Experience</h3>
+                <p>Experience across Türkiye, Dubai, Europe, the Middle East, and Asia gives us a broad understanding of international opportunities.</p>
+              </div>
+            </article>
+
+            <article className="why-oz-investment-card">
+              <div className="why-oz-investment-icon"><Building2 size={30} strokeWidth={1.8} /></div>
+              <div>
+                <span className="why-oz-investment-number">02.</span>
+                <h3>Local Expertise</h3>
+                <p>Strong knowledge of the Turkish market, supported by local relationships and hands-on operational experience.</p>
+              </div>
+            </article>
+
+            <article className="why-oz-investment-card">
+              <div className="why-oz-investment-icon"><TrendingUp size={30} strokeWidth={1.8} /></div>
+              <div>
+                <span className="why-oz-investment-number">03.</span>
+                <h3>We Invest, Not Just Advise</h3>
+                <p>We are actively involved in the businesses and investments we pursue, with a focus on practical execution.</p>
+              </div>
+            </article>
+
+            <article className="why-oz-investment-card">
+              <div className="why-oz-investment-icon"><UsersRound size={30} strokeWidth={1.8} /></div>
+              <div>
+                <span className="why-oz-investment-number">04.</span>
+                <h3>Strong International Network</h3>
+                <p>Our established network connects investors, businesses, institutions, and opportunities across borders.</p>
+              </div>
+            </article>
+
+            <article className="why-oz-investment-card">
+              <div className="why-oz-investment-icon"><ShieldCheck size={30} strokeWidth={1.8} /></div>
+              <div>
+                <span className="why-oz-investment-number">05.</span>
+                <h3>Trust, Transparency &amp; Execution</h3>
+                <p>We believe strong businesses are built through transparency, professionalism, reliable execution, and long-term relationships.</p>
+              </div>
+            </article>
+
+            <article className="why-oz-investment-card">
+              <div className="why-oz-investment-icon"><UserRoundCheck size={30} strokeWidth={1.8} /></div>
+              <div>
+                <span className="why-oz-investment-number">06.</span>
+                <h3>Long-Term Support</h3>
+                <p>We focus on lasting relationships and practical support throughout your investment and business journey.</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          FREQUENTLY ASKED QUESTIONS
+      ===================================================== */}
+
+      <section className="investment-faq">
+
+        <div className="shell">
+
+          <div className="investment-faq-heading">
+
+            <p className="eyebrow">
+              FREQUENTLY ASKED QUESTIONS
+            </p>
+
+            <h2>
+              Your Questions, Answered
+            </h2>
+
+            <p>
+              Find quick answers to the most common questions about
+              Turkish citizenship, investment opportunities, and our services.
+            </p>
+
+          </div>
+
+
+          <div className="investment-faq-grid">
+
+            {faqItems.map((item, index) => {
+
+              const isOpen = openFaq === index;
+
+              return (
+                <article
+                  className={`investment-faq-item${isOpen ? ' is-open' : ''}`}
+                  key={item.number}
+                >
+
+                  <button
+                    type="button"
+                    className="investment-faq-question"
+                    onClick={() => setOpenFaq(isOpen ? -1 : index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`investment-faq-answer-${item.number}`}
+                  >
+
+                    <span className="investment-faq-number">
+                      {item.number}
+                    </span>
+
+                    <span className="investment-faq-question-text">
+                      {item.question}
+                    </span>
+
+                    <span className="investment-faq-toggle" aria-hidden="true">
+                      {isOpen ? '−' : '+'}
+                    </span>
+
+                  </button>
+
+
+                  <div
+                    id={`investment-faq-answer-${item.number}`}
+                    className="investment-faq-answer"
+                    hidden={!isOpen}
+                  >
+                    <p>
+                      {item.answer}
+                    </p>
+                  </div>
+
+                </article>
+              );
+
+            })}
+
+          </div>
+
+
+          <div className="investment-faq-cta">
+
+            <div className="investment-faq-cta-icon">
+              <MessageCircle size={30} strokeWidth={1.8} />
+            </div>
+
+            <div className="investment-faq-cta-copy">
+
+              <p className="eyebrow">
+                STILL HAVE QUESTIONS?
+              </p>
+
+              <h3>
+                Let&apos;s Talk
+              </h3>
+
+              <p>
+                Our team is here to help you with personalized guidance
+                and answer any questions you may have.
+              </p>
+
+            </div>
+
+            <a
+              href="/contact"
+              className="button investment-faq-cta-button"
+            >
+              CONTACT US
+              <Arrow />
+            </a>
 
           </div>
 
@@ -3811,6 +4325,7 @@ function App() {
       <Header />
       {page}
       <Footer />
+        <ScrollToTop />
     </>
   );
 }
