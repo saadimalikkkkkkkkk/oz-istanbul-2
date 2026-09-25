@@ -1703,12 +1703,12 @@ function ContactPage() {
 
 
               {/* OFFICE */}
-
+A
               <div className="office-row">
 
                 <div className="office-icon">
 
-                  <Building2
+ a                <Building2
                     size={25}
                     strokeWidth={1.8}
                   />
@@ -1757,7 +1757,7 @@ function ContactPage() {
                   <div>
 
                     <span>
-                      Monday – Friday
+                      Monday – Saturday
                     </span>
 
                     <strong>
@@ -1770,7 +1770,7 @@ function ContactPage() {
                   <div>
 
                     <span>
-                      Saturday – Sunday
+                   Sunday
                     </span>
 
                     <strong>
