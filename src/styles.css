@@ -2018,14 +2018,7 @@ h2 em,
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,0.94) 0%,
-      rgba(255,255,255,0.82) 30%,
-      rgba(255,255,255,0.30) 65%,
-      rgba(255,255,255,0.04) 100%
-    );
+  background: transparent;
 }
 
 .services-page-hero-inner {
@@ -3058,7 +3051,9 @@ h2 em,
 
 .investment-hero {
   position: relative;
-  min-height: 680px;
+  width: 100%;
+  height: 376px;
+  min-height: 376px;
   display: flex;
   align-items: center;
   background-size: cover;
@@ -3067,30 +3062,37 @@ h2 em,
   overflow: hidden;
 }
 
+
+/* RED EDGE */
+
 .investment-hero::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 4px;
   height: 100%;
   background: var(--red);
   z-index: 3;
 }
 
+
+/* VERY LIGHT LEFT OVERLAY */
+
 .investment-hero::after {
   content: "";
   position: absolute;
   inset: 0;
+
   background:
     linear-gradient(
       90deg,
-      rgba(255,255,255,.10) 0%,
-      rgba(255,255,255,.07) 25%,
-      rgba(255,255,255,.035) 45%,
-      rgba(255,255,255,.01) 60%,
-      rgba(255,255,255,0) 70%
+      rgba(0, 0, 0, 0.38) 0%,
+      rgba(0, 0, 0, 0.24) 32%,
+      rgba(0, 0, 0, 0.08) 55%,
+      rgba(0, 0, 0, 0) 72%
     );
+
   z-index: 1;
 }
 
@@ -3103,11 +3105,13 @@ h2 em,
   position: relative;
   z-index: 2;
   width: min(1360px, calc(100% - 80px));
+  height: 100%;
   margin: 0 auto;
-  min-height: 680px;
+
   display: flex;
   align-items: center;
-  padding: 90px 0;
+
+  padding: 0;
 }
 
 
@@ -3116,39 +3120,85 @@ h2 em,
 ========================================================= */
 
 .investment-hero-copy {
-  width: min(650px, 100%);
+  width: 620px;
+  max-width: 620px;
+
+  /* keeps the whole block visually centered */
+  transform: translateY(4px);
 }
+
+
+/* EYEBROW */
 
 .investment-hero-copy .eyebrow {
-  margin: 0 0 20px;
+  margin: 0 0 14px;
+
   color: var(--red);
-  font-size: 13px;
+
+  font-size: 12px;
+  line-height: 1.2;
   font-weight: 700;
-  letter-spacing: .18em;
+
+  letter-spacing: .17em;
   text-transform: uppercase;
+
+  /* NO SHADOW */
+  text-shadow: none;
 }
 
+
+/* MAIN HEADING */
+
 .investment-hero-copy h1 {
-  max-width: 620px;
+  max-width: 600px;
+
   margin: 0;
+
   color: #17181c;
-  font-size: clamp(52px, 5.4vw, 78px);
+
+  font-size: clamp(44px, 4vw, 58px);
   line-height: .98;
+
   font-weight: 700;
-  letter-spacing: -.055em;
+
+  letter-spacing: -.045em;
+
+  /* NO SHADOW */
+  text-shadow: none;
 }
+
+
+/* RED PART OF HEADING */
 
 .investment-hero-copy h1 em {
   color: var(--red);
   font-style: normal;
 }
 
+
+/* DESCRIPTION */
+
 .investment-hero-copy > p:not(.eyebrow) {
-  max-width: 590px;
-  margin: 28px 0 0;
-  color: #000000;
-  font-size: 17px;
-  line-height: 1.8;
+  max-width: 570px;
+
+  margin: 18px 0 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 500;
+
+  /* REMOVE BLACK SHADOW */
+  text-shadow: none;
+}
+
+
+/* Make absolutely sure no paragraph inside
+   the investment hero gets a shadow */
+
+.investment-hero-copy p {
+  text-shadow: none;
 }
 
 
@@ -3159,25 +3209,62 @@ h2 em,
 .investment-hero-actions {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 34px;
+
+  flex-wrap: nowrap;
+
+  gap: 26px;
+
+  margin-top: 22px;
 }
+
+
+/* MAIN BUTTON */
+
+.investment-hero-actions .button {
+  min-height: 42px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* TEXT LINK */
 
 .investment-text-link {
   display: inline-flex;
   align-items: center;
+
   gap: 8px;
+
   color: #202124;
+
   font-size: 14px;
   font-weight: 700;
+
   text-decoration: none;
+
+  white-space: nowrap;
+
+  text-shadow: none;
 }
+
+
+/* ARROW */
 
 .investment-text-link .arrow {
   color: var(--red);
+
   transition: transform .2s ease;
 }
+
 
 .investment-text-link:hover .arrow {
   transform: translate(3px,-3px);
@@ -3193,33 +3280,39 @@ h2 em,
 .investment-hero-copy > p:not(.eyebrow),
 .investment-hero-actions {
   opacity: 0;
+
   animation:
     investmentFadeIn
-    .85s
+    .75s
     cubic-bezier(.22,1,.36,1)
     forwards;
 }
 
+
 .investment-hero-copy .eyebrow {
-  animation-delay: .08s;
+  animation-delay: .05s;
 }
+
 
 .investment-hero-copy h1 {
-  animation-delay: .18s;
+  animation-delay: .12s;
 }
 
+
 .investment-hero-copy > p:not(.eyebrow) {
+  animation-delay: .20s;
+}
+
+
+.investment-hero-actions {
   animation-delay: .30s;
 }
 
-.investment-hero-actions {
-  animation-delay: .42s;
-}
 
 @keyframes investmentFadeIn {
   from {
     opacity: 0;
-    transform: translateX(45px);
+    transform: translateX(25px);
   }
 
   to {
@@ -3288,7 +3381,7 @@ h2 em,
 
 .citizenship-investment-card {
   position: relative;
-  min-height: 400px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   padding: 34px 36px 32px;

@@ -3643,7 +3643,7 @@ function Footer() {
             <Clock size={18} />
 
             <span>
-              Mon – Fri: 09:00 – 18:00
+              Mon – Sat: 09:00 – 18:00
             </span>
 
           </div>
