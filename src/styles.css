@@ -1,12 +1,12 @@
 /* =========================================================
    GLOBAL
 ========================================================= */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 :root {
   --ink: #252525;
   --muted: #666666;
-  --red: #d8262c;
-  --red-dark: #d8262c;
+  --red: #800020;
+  --red-dark: #800020;
   --line: #eeeeee;
   --white: #ffffff;
   --black: #000000;
@@ -28,7 +28,7 @@ body {
   padding: 0;
   background: #ffffff;
   color: var(--ink);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
@@ -1376,9 +1376,10 @@ h2 em,
   padding: 75px 0;
   left: -50px;
 }
+
 .about-page-hero .eyebrow {
   margin: 0 0 20px;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.18em;
 }
 
@@ -1396,7 +1397,7 @@ h2 em,
   color: #17181c;
   font-size: clamp(48px, 5.4vw, 76px);
   line-height: 1.02;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: -0.045em;
 }
 
@@ -1407,7 +1408,7 @@ h2 em,
 .about-page-hero .hero-text {
   max-width: 600px;
   margin: 25px 0 0;
-  color: #030303;
+  color: #454545;
   font-size: 17px;
   line-height: 1.65;
 }
@@ -2025,8 +2026,8 @@ h2 em,
   position: relative;
   z-index: 2;
   padding: 75px 0;
-  left: -40px;
-  
+    transform: translateX(-50px);
+    height:-50px;
 }
 
 .services-page-hero .eyebrow {
@@ -2047,16 +2048,17 @@ h2 em,
 .services-page-hero h1 {
   margin: 0;
   color: #17181c;
- font-size: clamp(45px, 5vw, 65px);
+  font-size: clamp(48px, 5.4vw, 76px);
   line-height: 1.02;
   font-weight: 700;
   letter-spacing: -0.045em;
+  font-size: 65px;
 }
 
 .services-hero-text {
   max-width: 600px;
   margin: 25px 0 0;
-  color: #010101;
+  color: #454545;
   font-size: 17px;
   line-height: 1.65;
 }
@@ -2672,7 +2674,8 @@ h2 em,
   position: relative;
   z-index: 2;
   padding: 55px 0;
-  left: -20px;
+  transform: translateX(-50px);
+
 }
 
 .contact-page-hero .eyebrow {
@@ -2687,7 +2690,7 @@ h2 em,
 
 .contact-page-hero h1 {
   margin: 0;
-  color: #d8262c;
+  color: #030303;
   font-size: clamp(48px, 5vw, 72px);
   line-height: .98;
   font-weight: 700;
@@ -2695,14 +2698,14 @@ h2 em,
 }
 
 .contact-page-hero h1 span {
-  color: #000000;
+  color: #070707;
 }
 
 .contact-hero-text {
   max-width: 480px;
   margin: 18px 0 0;
-  color: #000000;
-  font-size: 17px;
+  color: #ffffff;
+  font-size: 14px;
   line-height: 1.65;
 }
 
@@ -3060,7 +3063,7 @@ h2 em,
   display: flex;
   align-items: center;
   background-size: cover;
-  background-position: 68% 80%;
+background-position: 68% 82%;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -3115,7 +3118,6 @@ h2 em,
   align-items: center;
 
   padding: 0;
-   transform: translateX(-50px);
 }
 
 
@@ -3128,7 +3130,7 @@ h2 em,
   max-width: 620px;
 
   /* keeps the whole block visually centered */
-  transform: translateY(4px);
+  transform: translate(-50px, 4px);;
 }
 
 
@@ -3139,7 +3141,7 @@ h2 em,
 
   color: var(--red);
 
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.2;
   font-weight: 700;
 
@@ -3158,12 +3160,12 @@ h2 em,
 
   margin: 0;
 
-  color: #010101;
+  color: #000000;
 
   font-size: clamp(44px, 4vw, 58px);
-  line-height: .98;
+  line-height: 1.025;
 
-  font-weight: 700;
+  font-weight: 500;
 
   letter-spacing: -.045em;
 
@@ -3187,7 +3189,7 @@ h2 em,
 
   margin: 18px 0 0;
 
-  color: #020202;
+  color: #ffffff;
 
   font-size: 15px;
   line-height: 1.55;
@@ -3248,7 +3250,7 @@ h2 em,
 
   gap: 8px;
 
-  color: #050505;
+  color: #202124;
 
   font-size: 14px;
   font-weight: 700;
@@ -3331,7 +3333,7 @@ h2 em,
 ========================================================= */
 
 .investment-options {
-  padding: 125px 0 135px;
+  padding: 80px 0 90px;
   background: #ffffff;
 }
 
@@ -3597,6 +3599,11 @@ h2 em,
 /* =========================================================
    WHY TURKISH CITIZENSHIP — CARDS ONLY
 ========================================================= */
+.why-turkish-citizenship {
+  padding: 80px 0 90px;
+  background: #ffffff;
+}
+
 .why-citizenship-heading {
   text-align: center;
 }
@@ -3933,8 +3940,8 @@ h2 em,
     margin-bottom: 20px;
   }
 
-  .text-link {
-    margin-top: 12px;
+  .about-copy .text-link {
+    margin-top: 32px;
   }
 
   /* GENERAL */
@@ -5410,7 +5417,7 @@ h2 em,
 ========================================================= */
 
 .why-oz-investment {
-  padding: 120px 0 125px;
+  padding: 80px 0 90px;
   background: #ffffff;
 }
 
@@ -5578,7 +5585,7 @@ h2 em,
 ========================================================= */
 
 .investment-faq {
-  padding: 120px 0 105px;
+  padding: 80px 0 85px;
   background: #ffffff;
 }
 
@@ -5858,41 +5865,505 @@ h2 em,
 
 
 /* =========================================================
-   SCROLL TO TOP
+   CITIZENSHIP INVESTMENT OPTIONS — REFINED TWO-CARD DESIGN
+   Only the investment-options cards are overridden here.
 ========================================================= */
 
-.scroll-to-top {
-  --scroll-progress: 0;
+.investment-option-group {
+  margin-top: 0;
+}
 
-  position: fixed;
-  right: 28px;
-  bottom: 28px;
-  z-index: 999;
+.investment-group-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 32px;
+}
 
+.investment-group-heading .eyebrow {
+  margin: 0 0 12px;
+  font-size: 11px;
+  letter-spacing: .2em;
+}
+
+.investment-group-heading h3 {
+  margin: 0;
+  color: #17181c;
+  font-size: clamp(34px, 3.2vw, 48px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+
+.investment-group-heading h3 em {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.investment-group-heading > p {
+  max-width: 340px;
+  margin: 0 0 3px;
+  padding-left: 25px;
+  border-left: 1px solid #dedbd5;
+  color: #707070;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.citizenship-investment-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.citizenship-investment-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: #fff;
+  border: 1px solid #e7e4df;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 34px rgba(24, 22, 19, .045);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.citizenship-investment-card::before {
+  display: none;
+}
+
+.citizenship-investment-card:hover {
+  transform: translateY(-6px);
+  border-color: #dcd8d2;
+  box-shadow: 0 24px 52px rgba(24, 22, 19, .11);
+}
+
+.citizenship-card-image {
+  position: relative;
+  height: 245px;
+  min-height: 0;
+  overflow: hidden;
+  background: #ece9e4;
+}
+
+.citizenship-card-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  transition: transform .55s ease;
+}
+
+.citizenship-investment-card:hover .citizenship-card-image img {
+  transform: scale(1.045);
+}
+
+.citizenship-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 48%, rgba(0,0,0,.18) 100%);
+  pointer-events: none;
+}
+
+.citizenship-card-image-icon {
+  position: absolute;
+  left: 24px;
+  bottom: 0;
+  z-index: 2;
   width: 58px;
   height: 58px;
-  padding: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fff;
+  border: 1px solid #e7e4df;
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  color: var(--red);
+}
 
+.citizenship-card-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 25px 28px 29px;
+}
+
+.citizenship-card-top {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 8px;
+}
+
+.citizenship-card-top > span {
+  color: #aaa7a1;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.citizenship-investment-card h4 {
+  margin: 0 0 8px;
+  color: #17181c;
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+
+.citizenship-card-amount {
+  margin: 0 0 13px;
+  color: var(--red);
+  font-size: clamp(36px, 3.3vw, 48px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -.055em;
+}
+
+.citizenship-card-description {
+  max-width: 600px;
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.citizenship-card-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #ece9e5;
+}
+
+.citizenship-card-detail {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.citizenship-card-detail strong {
+  color: #222326;
+  font-size: 14px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.citizenship-card-detail span {
+  color: #8b8985;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.citizenship-card-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .055em;
+}
+
+.citizenship-card-link .arrow {
+  color: var(--red);
+  transition: transform .2s ease;
+}
+
+.citizenship-card-link:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 980px) {
+  .investment-group-heading {
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .investment-group-heading > p {
+    max-width: 100%;
+    margin-top: 14px;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .citizenship-investment-list {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+@media (max-width: 700px) {
+  .investment-group-heading h3 {
+    font-size: 34px;
+  }
+
+  .citizenship-card-image {
+    height: 230px;
+  }
+
+  .citizenship-card-content {
+    padding: 24px 24px 27px;
+  }
+
+  .citizenship-investment-card h4 {
+    font-size: 24px;
+  }
+
+  .citizenship-card-amount {
+    font-size: 44px;
+  }
+
+  .citizenship-card-details {
+    gap: 12px;
+  }
+
+  .citizenship-card-detail strong {
+    font-size: 12px;
+  }
+
+  .citizenship-card-detail span {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .citizenship-card-image {
+    height: 210px;
+  }
+
+  .citizenship-card-details {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .citizenship-card-image-icon {
+    left: 18px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+/* =========================================================
+   CITIZENSHIP PAGE — HEADING FINISH
+========================================================= */
+
+.investment-page h1,
+.investment-page h2,
+.investment-page h3,
+.investment-page h4 {
+  text-wrap: balance;
+}
+
+.investment-page .investment-section-heading h2,
+.investment-page .why-citizenship-heading h2,
+.investment-page .why-oz-investment-heading h2,
+.investment-page .investment-faq-heading h2 {
+  color: #17181c;
+  font-size: clamp(42px, 5.1vw, 68px);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -.06em;
+}
+
+.investment-page .investment-section-heading h2 em,
+.investment-page .why-citizenship-heading h2 em,
+.investment-page .why-oz-investment-heading h2 em,
+.investment-page .investment-faq-heading h2 em {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.investment-page .investment-group-heading h3 {
+  color: #202124;
+  font-size: clamp(30px, 3.2vw, 46px);
+  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -.05em;
+}
+
+.investment-page .investment-group-heading h3 em {
+  color: var(--red);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.investment-page .citizenship-investment-card h4 {
+  color: #202124;
+  font-size: clamp(23px, 2vw, 29px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -.04em;
+}
+
+.investment-page .investment-benefit-content h3,
+.investment-page .why-oz-investment-card h3 {
+  color: #202124;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+
+@media (max-width: 700px) {
+  .investment-page .investment-section-heading h2,
+  .investment-page .why-citizenship-heading h2,
+  .investment-page .why-oz-investment-heading h2,
+  .investment-page .investment-faq-heading h2 {
+    font-size: clamp(38px, 10vw, 52px);
+  }
+}
+
+/* =========================================================
+   HOMEPAGE — SECTION SPACING
+========================================================= */
+
+#home > .section {
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+#home > #about {
+  padding-top: 116px;
+}
+
+#home > #consultancy {
+  padding-top: 48px;
+}
+
+#home .section-heading {
+  display: block;
+  margin-bottom: 55px;
+  text-align: center;
+}
+
+#home .section-heading > p {
+  max-width: 620px;
+  margin: 22px auto 0;
+}
+
+#home > .global {
+  padding-top: 78px;
+  padding-bottom: 88px;
+}
+
+#home > .process {
+  padding-top: 78px;
+  padding-bottom: 88px;
+}
+
+#home > .contact {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.services-page .construction-section {
+  padding-top: 70px;
+}
+
+.services-page .construction-process {
+  background: #ffffff;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.services-page .services-intro {
+  padding-top: 55px;
+  padding-bottom: 25px;
+}
+
+.services-page .services-grid-section {
+  padding-top: 25px;
+  padding-bottom: 70px;
+}
+
+.services-page .construction-section {
+  padding-top: 50px;
+}
+
+.services-page .construction-services {
+  margin-top: 80px;
+  padding-bottom: 80px;
+}
+
+.services-page .construction-process {
+  margin-top: 70px;
+  padding-top: 70px;
+  padding-bottom: 75px;
+}
+
+.about-page .about-story-copy p {
+  line-height: 1.6;
+}
+
+.about-page .why-oz {
+  padding-top: 12px;
+}
+
+.about-page .why-oz-content > .eyebrow {
+  display: none;
+}
+
+#home > section.scroll-reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+#home > section.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(34px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 110;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  padding: 0;
   border: 0;
   border-radius: 50%;
   background: #ffffff;
-  color: #252525;
-
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-
+  color: var(--red);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
-
   transition:
-    opacity 0.25s ease,
-    visibility 0.25s ease,
-    transform 0.25s ease,
-    color 0.25s ease;
+    opacity .25s ease,
+    transform .25s ease,
+    visibility .25s ease;
 }
 
 .scroll-to-top.is-visible {
@@ -5901,26 +6372,24 @@ h2 em,
   transform: translateY(0);
 }
 
-.scroll-to-top:hover {
-  color: var(--red);
+.scroll-to-top-track,
+.scroll-to-top-track::before,
+.scroll-to-top-progress {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
 }
 
 .scroll-to-top-track {
-  position: absolute;
-  inset: -2px;
-  border-radius: 50%;
   background: conic-gradient(
-    var(--red) calc(var(--scroll-progress) * 1turn),
-    #e8e8e8 0
+    var(--red) calc(var(--scroll-progress) * 100%),
+    #e5e5e5 0
   );
-  pointer-events: none;
 }
 
-.scroll-to-top-track::after {
-  content: '';
-  position: absolute;
-  inset: 3px;
-  border-radius: 50%;
+.scroll-to-top-track::before {
+  content: "";
+  inset: 4px;
   background: #ffffff;
 }
 
@@ -5931,1365 +6400,88 @@ h2 em,
 .scroll-to-top-icon {
   position: relative;
   z-index: 1;
+  font-size: 23px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.scroll-to-top:hover {
+  color: #ffffff;
+  background: var(--red);
+}
+
+.scroll-to-top:hover .scroll-to-top-track::before {
+  background: var(--red);
 }
 
 @media (max-width: 700px) {
   .scroll-to-top {
-    right: 18px;
-    bottom: 18px;
-    width: 52px;
-    height: 52px;
+    right: 16px;
+    bottom: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .scroll-to-top-icon {
+    font-size: 21px;
   }
 }
 
-
-/* =========================================================
-   FINAL MOBILE POLISH
-   Scoped overrides only — desktop styling remains unchanged.
-========================================================= */
-
 @media (max-width: 700px) {
-
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .shell {
-    width: calc(100% - 32px);
-    max-width: none;
-  }
-
-  /* HEADER */
-
-  header {
-    width: 100%;
-  }
-
-  .nav-shell {
-    width: calc(100% - 32px);
-    height: 82px;
-    min-height: 82px;
-    gap: 0;
-  }
-
-  .nav-shell .logo {
-    width: 68px;
-    height: 68px;
-    flex: 0 0 68px;
-  }
-
-  .mobile-menu {
-    width: 46px;
-    height: 46px;
-    color: #222222;
-  }
-
-  .mobile-menu svg {
-    width: 31px;
-    height: 31px;
-  }
-
-  .nav-shell nav {
-    top: 82px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 20px 18px 24px;
-    border-top: 1px solid #eeeeee;
-  }
-
-  .nav-shell nav.open {
-    gap: 0;
-  }
-
-  .nav-shell nav a {
-    display: block;
-    padding: 14px 4px;
-    font-size: 16px;
-  }
-
-  /* HOMEPAGE HERO */
-
-  .hero {
-    min-height: auto;
-    height: auto;
-  }
-
-  .hero-background {
-    object-position: 58% center;
-  }
-
-  .hero-shade {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.54) 0%,
-        rgba(0, 0, 0, 0.62) 45%,
-        rgba(0, 0, 0, 0.76) 100%
-      );
-  }
-
-  .hero-content {
-    width: calc(100% - 32px);
-    min-height: auto;
-    padding-top: 62px;
+  #home > .section,
+  #home > .global,
+  #home > .process {
+    padding-top: 58px;
     padding-bottom: 58px;
   }
 
-  .hero .eyebrow,
-  .hero .eyebrow.light {
-    max-width: 100%;
-    margin-bottom: 18px;
-    color: #ffffff;
-    font-size: 11px;
-    line-height: 1.45;
-    letter-spacing: 0.14em;
+  #home > .contact {
+    padding-top: 58px;
+    padding-bottom: 58px;
   }
 
-  .hero h1 {
-    max-width: 100%;
-    color: #ffffff;
-    font-size: clamp(37px, 10.5vw, 48px);
-    line-height: 1.03;
-    letter-spacing: -0.04em;
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.38);
+  .services-page .construction-section {
+    padding-top: 60px;
   }
 
-  .hero-text {
-    max-width: 100%;
-    margin: 22px 0 0;
-    color: #f5f5f5;
-    font-size: 15px;
-    line-height: 1.65;
-    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    margin-top: 28px;
-  }
-
-  .hero-actions .button {
-    min-height: 54px;
-    padding: 15px 20px;
-    font-size: 12px;
-  }
-
-  .play-link {
-    color: #ffffff;
-    font-size: 15px;
-  }
-
-  .play-link i {
-    width: 44px;
-    height: 44px;
-  }
-
-  /*
-     Keep the citizenship banner inside the normal flow.
-     This prevents it from making the mobile hero excessively tall.
-  */
-
-  .citizenship-banner {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: 100%;
-    max-width: 100%;
-    margin: 30px 0 0;
-    transform: none;
-  }
-
-  .citizenship-banner a {
-    width: 100%;
-  }
-
-  .citizenship-banner img {
-    width: 100%;
-    height: auto;
-    border-radius: 3px;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
-  }
-
-  /* Disable the desktop centering transform used by the old animation. */
-
-  .hero-content > .citizenship-banner {
-    animation: none;
-    opacity: 1;
-  }
-
-  /* GENERAL TYPOGRAPHY */
-
-  h2,
-  .about-copy h2,
-  .section-heading h2,
-  .global h2,
-  .contact h2 {
-    font-size: 34px;
-    line-height: 1.12;
-  }
-
-  .section {
-    padding: 72px 0;
-  }
-
-  /* HOMEPAGE SECTIONS */
-
-  .about {
-    gap: 55px;
-  }
-
-  .about-images {
-    height: 300px;
-  }
-
-  .main-image {
-    width: 84%;
-  }
-
-  .about-copy > p:not(.eyebrow) {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .section-heading {
-    margin-bottom: 40px;
-  }
-
-  .section-heading > p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .service-grid,
-  .consultancy-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service-photo {
-    height: 190px;
-  }
-
-  /* INVESTMENT PAGE */
-
-  .investment-hero {
-    height: auto;
-    min-height: 560px;
-    background-position: 64% center;
-  }
-
-  .investment-hero::after {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.62) 0%,
-        rgba(0, 0, 0, 0.42) 45%,
-        rgba(0, 0, 0, 0.72) 100%
-      );
-  }
-
-  .investment-hero-inner {
-    width: calc(100% - 32px);
-    min-height: 560px;
-    padding: 62px 0 58px;
-  }
-
-  .investment-hero-copy {
-    width: 100%;
-    max-width: 100%;
-    transform: none;
-  }
-
-  .investment-hero-copy .eyebrow {
-    margin-bottom: 16px;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-  }
-
-  .investment-hero-copy h1 {
-    max-width: 100%;
-    font-size: clamp(40px, 10.5vw, 50px);
-    line-height: 1.02;
-  }
-
-  .investment-hero-copy > p:not(.eyebrow) {
-    max-width: 100%;
-    margin-top: 20px;
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .investment-hero-actions {
-    margin-top: 27px;
-  }
-
-  .investment-options {
-    padding: 72px 0 80px;
-  }
-
-  .investment-section-heading {
-    margin-bottom: 45px;
-    text-align: center;
-  }
-
-  .investment-section-heading h2 {
-    font-size: 40px;
-    line-height: 1.05;
-  }
-
-  .investment-section-heading > p:last-child {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .investment-group-heading h3 {
-    font-size: 31px;
-  }
-
-  .citizenship-card-content {
-    padding: 24px 21px 25px;
-  }
-
-  .citizenship-investment-card h4 {
-    font-size: 22px;
-  }
-
-  .citizenship-card-amount {
-    font-size: 39px;
-  }
-
-  .citizenship-card-description {
-    font-size: 15px;
-  }
-
-  .citizenship-card-image {
-    height: 210px;
-  }
-
-  .citizenship-card-image img {
-    min-height: 210px;
-  }
-
-  /* WHY ÖZ ISTANBUL — INVESTMENT PAGE */
-
-  .why-oz-investment {
-    padding: 78px 0 82px;
-  }
-
-  .why-oz-investment-heading h2 {
-    font-size: 40px;
-    line-height: 1.06;
-  }
-
-  .why-oz-investment-heading > p:last-child {
-    margin-top: 20px;
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .why-oz-investment-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-top: 42px;
-  }
-
-  .why-oz-investment-card {
-    min-height: auto;
-    padding: 24px 20px;
-    gap: 17px;
-  }
-
-  .why-oz-investment-icon {
-    flex: 0 0 50px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .why-oz-investment-icon svg {
-    width: 23px;
-    height: 23px;
-  }
-
-  .why-oz-investment-card h3 {
-    font-size: 19px;
-  }
-
-  .why-oz-investment-card p {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  /* FAQ */
-
-  .investment-faq {
-    padding: 78px 0 78px;
-  }
-
-  .investment-faq-heading h2 {
-    font-size: 39px;
-  }
-
-  .investment-faq-heading > p:last-child {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .investment-faq-grid {
-    margin-top: 40px;
-    gap: 12px;
-  }
-
-  .investment-faq-question {
-    min-height: 76px;
-    grid-template-columns: 38px minmax(0, 1fr) 22px;
-    gap: 12px;
-    padding: 14px 14px 14px 12px;
-  }
-
-  .investment-faq-number {
-    width: 38px;
-    height: 32px;
-    font-size: 12px;
-  }
-
-  .investment-faq-question-text {
-    font-size: 15px;
-    line-height: 1.35;
-  }
-
-  .investment-faq-toggle {
-    font-size: 25px;
-  }
-
-  .investment-faq-answer {
-    padding: 0 17px 22px 62px;
-  }
-
-  .investment-faq-answer p {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .investment-faq-cta {
-    grid-template-columns: 54px minmax(0, 1fr);
-    gap: 17px;
-    margin-top: 28px;
-    padding: 27px 20px;
-  }
-
-  .investment-faq-cta-icon {
-    width: 54px;
-    height: 54px;
-  }
-
-  .investment-faq-cta-copy h3 {
-    font-size: 29px;
-  }
-
-  .investment-faq-cta-copy > p:last-child {
-    font-size: 14px;
-  }
-
-  .investment-faq-cta-button {
-    grid-column: 1 / -1;
-    width: 100%;
-  }
-
-  /* SCROLL-TO-TOP */
-
-  .scroll-to-top {
-    right: 16px;
-    bottom: 18px;
-    width: 52px;
-    height: 52px;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES — FINAL POLISH
-========================================================= */
-
-@media (max-width: 420px) {
-
-  .shell {
-    width: calc(100% - 28px);
-  }
-
-  .nav-shell {
-    width: calc(100% - 28px);
-  }
-
-  .hero-content {
-    width: calc(100% - 28px);
-    padding-top: 52px;
-    padding-bottom: 48px;
-  }
-
-  .hero h1 {
-    font-size: 37px;
-  }
-
-  .hero-text {
-    font-size: 14px;
-  }
-
-  .citizenship-banner {
-    margin-top: 25px;
-  }
-
-  .investment-hero-inner {
-    width: calc(100% - 28px);
-  }
-
-  .investment-hero-copy h1 {
-    font-size: 40px;
-  }
-
-  .why-oz-investment-heading h2,
-  .investment-faq-heading h2 {
-    font-size: 36px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE HERO COMPOSITION — FINAL
-   Mobile only. Desktop is unchanged.
-========================================================= */
-
-@media (max-width: 700px) {
-
-  /* Show the RIGHT side of every hero image on phones. */
-
-  .hero-background {
-    object-position: right center;
-  }
-
-  .about-page-hero,
-  .services-page-hero,
-  .contact-page-hero,
-  .investment-hero {
-    background-position: right center;
-  }
-
-
-  /* ---------------------------------------------------------
-     HOME HERO — BANNER + BUTTONS
-  --------------------------------------------------------- */
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero .citizenship-banner {
-    position: relative;
-    left: auto;
-    bottom: auto;
-
-    width: min(100%, 345px);
-    max-width: 345px;
-
-    margin: 28px auto 0;
-
-    transform: none;
-  }
-
-  .hero .citizenship-banner img {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero .hero-actions {
-    width: 100%;
-    margin-top: 24px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-  }
-
-  .hero .hero-actions .button {
-    width: min(100%, 340px);
-    min-height: 56px;
-    justify-content: center;
-  }
-
-  .hero .play-link {
-    width: auto;
-    margin-left: 2px;
-  }
-
-
-  /* Keep the banner and buttons in normal mobile flow.
-     This prevents the desktop absolute positioning from
-     pushing them over the hero image. */
-
-  .hero-content > .citizenship-banner {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-
-  /* ---------------------------------------------------------
-     OTHER PAGE HEROES
-  --------------------------------------------------------- */
-
-  .about-page-hero,
-  .services-page-hero {
-    min-height: 440px;
-  }
-
-  .about-page-hero-inner,
-  .services-page-hero-inner {
-    width: calc(100% - 32px);
-    padding: 62px 0;
-  }
-
-  .about-page-hero h1,
-  .services-page-hero h1 {
-    max-width: 100%;
-    font-size: 42px;
-    line-height: 1.04;
-  }
-
-  .about-page-hero .hero-text,
-  .services-hero-text {
-    max-width: 100%;
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .contact-page-hero {
-    min-height: 390px;
-  }
-
-  .contact-page-hero-inner {
-    width: calc(100% - 32px);
-    padding: 58px 0;
-  }
-
-  .contact-page-hero h1 {
-    max-width: 100%;
-    font-size: 43px;
-    line-height: 1.02;
-  }
-
-  .contact-hero-text {
-    max-width: 100%;
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-
-  /* ---------------------------------------------------------
-     CITIZENSHIP / INVESTMENT HERO
-  --------------------------------------------------------- */
-
-  .investment-hero {
-    height: auto;
-    min-height: 560px;
-  }
-
-  .investment-hero-inner {
-    width: calc(100% - 32px);
-    min-height: 560px;
-    height: auto;
-    padding: 62px 0 60px;
-    align-items: flex-start;
-  }
-
-  .investment-hero-copy {
-    width: 100%;
-    max-width: 100%;
-    transform: none;
-  }
-
-  .investment-hero-copy h1 {
-    max-width: 100%;
-    font-size: 43px;
-    line-height: 1.02;
-  }
-
-  .investment-hero-copy > p:not(.eyebrow) {
-    max-width: 100%;
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .investment-hero-actions {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    margin-top: 25px;
-  }
-
-  .investment-hero-actions .button {
-    width: min(100%, 340px);
-    min-height: 54px;
-  }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 420px) {
-
-  .hero .citizenship-banner {
-    width: min(100%, 325px);
-    max-width: 325px;
-    margin-top: 24px;
-  }
-
-  .hero .hero-actions {
-    margin-top: 21px;
-  }
-
-  .hero .hero-actions .button {
-    width: min(100%, 325px);
-  }
-
-  .about-page-hero,
-  .services-page-hero {
-    min-height: 420px;
-  }
-
-  .about-page-hero-inner,
-  .services-page-hero-inner,
-  .contact-page-hero-inner,
-  .investment-hero-inner {
-    width: calc(100% - 28px);
-  }
-
-  .about-page-hero h1,
-  .services-page-hero h1 {
-    font-size: 39px;
-  }
-
-  .contact-page-hero h1 {
-    font-size: 40px;
-  }
-
-  .investment-hero-copy h1 {
-    font-size: 40px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE HOME HERO — FINAL POSITIONING
-========================================================= */
-
-@media (max-width: 700px) {
-
-  .hero {
-    min-height: 720px;
-    height: auto;
-  }
-
-  .hero-content {
-    position: relative;
-    min-height: 720px;
-    height: 720px;
-    padding-top: 52px;
-    padding-bottom: 28px;
-    display: block;
-  }
-
-  .hero .hero-text {
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  /*
-     Put both actions beside each other immediately after
-     the small descriptive text.
-  */
-
-  .hero .hero-actions {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 500px;
-
-    width: 100%;
-    margin: 0;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 18px;
-  }
-
-  .hero .hero-actions .button {
-    width: auto;
-    min-height: 54px;
-    flex: 0 0 auto;
-    padding: 14px 18px;
-    font-size: 11px;
-    white-space: nowrap;
-  }
-
-  .hero .play-link {
-    flex: 0 0 auto;
-    margin: 0;
-    white-space: nowrap;
-    font-size: 14px;
-  }
-
-  .hero .play-link i {
-    width: 42px;
-    height: 42px;
-    margin-right: 8px;
-  }
-
-  /*
-     Banner stays at the bottom of the hero, below the
-     action row. It is no longer part of the text flow.
-  */
-
-  .hero .citizenship-banner {
-    position: absolute;
-    left: 50%;
-    bottom: 18px;
-
-    width: min(100%, 355px);
-    max-width: 355px;
-    margin: 0;
-
-    transform: translateX(-50%);
-  }
-
-  .hero-content > .citizenship-banner {
-    opacity: 1;
-    animation: none;
-  }
-}
-
-
-@media (max-width: 420px) {
-
-  .hero {
-    min-height: 700px;
-  }
-
-  .hero-content {
-    min-height: 700px;
-    height: 700px;
-    padding-top: 48px;
-  }
-
-  .hero .hero-actions {
-    top: 490px;
-    gap: 12px;
-  }
-
-  .hero .hero-actions .button {
-    min-height: 50px;
-    padding: 13px 14px;
-    font-size: 10px;
-  }
-
-  .hero .play-link {
-    font-size: 13px;
-  }
-
-  .hero .play-link i {
-    width: 38px;
-    height: 38px;
-  }
-
-  .hero .citizenship-banner {
-    width: min(100%, 330px);
-    max-width: 330px;
-    bottom: 14px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE HOME HERO — FINAL SPACING / BUTTON FIT
-========================================================= */
-
-@media (max-width: 700px) {
-
-  .hero-content {
-    min-height: 720px;
-    height: 720px;
-    padding-top: 46px;
-  }
-
-  /* Move the hero copy slightly toward the middle-left. */
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    width: calc(100% - 8px);
-    margin-left: 4px;
-  }
-
-  .hero h1 {
-    max-width: 100%;
-    font-size: clamp(37px, 10vw, 46px);
-  }
-
-  .hero-text {
-    max-width: 100%;
-    margin-top: 18px;
-    font-size: 14.5px;
-    line-height: 1.6;
-  }
-
-  /*
-     Buttons sit much closer to the description and always fit
-     inside the phone viewport.
-  */
-  .hero .hero-actions {
-    position: absolute;
-    left: 4px;
-    right: 4px;
-    top: 520px;
-
-    width: auto;
-    margin: 0;
-
-    display: grid;
-    grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 10px;
-  }
-
-  .hero .hero-actions .button {
-    width: 100%;
-    min-width: 0;
-    min-height: 52px;
-    padding: 13px 10px;
-    font-size: 10px;
-    letter-spacing: 0.045em;
-    white-space: nowrap;
-  }
-
-  .hero .play-link {
-    min-width: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.2;
-    white-space: nowrap;
-  }
-
-  .hero .play-link i {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-    margin: 0;
-  }
-
-  /*
-     Banner remains at the very bottom of the hero.
-  */
-  .hero .citizenship-banner {
-    left: 50%;
-    bottom: 14px;
-    width: min(100%, 340px);
-    max-width: 340px;
-  }
-}
-
-
-@media (max-width: 420px) {
-
-  .hero-content {
-    min-height: 690px;
-    height: 690px;
-    padding-top: 42px;
-  }
-
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    margin-left: 2px;
-    width: calc(100% - 4px);
-  }
-
-  .hero h1 {
-    font-size: 36px;
-    line-height: 1.04;
-  }
-
-  .hero-text {
-    margin-top: 16px;
-    font-size: 14px;
-  }
-
-  .hero .hero-actions {
-    left: 2px;
-    right: 2px;
-    top: 485px;
-    grid-template-columns: minmax(0, 1.34fr) minmax(0, 1fr);
-    gap: 8px;
-  }
-
-  .hero .hero-actions .button {
-    min-height: 50px;
-    padding: 12px 8px;
-    font-size: 9.5px;
-  }
-
-  .hero .play-link {
-    gap: 7px;
-    font-size: 11.5px;
-  }
-
-  .hero .play-link i {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-  }
-
-  .hero .citizenship-banner {
-    width: min(100%, 325px);
-    max-width: 325px;
-    bottom: 18px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE HOME HERO — NATURAL FLOW / FINAL
-   Keeps the banner at the bottom while the text + buttons
-   stay together with a small, consistent gap.
-========================================================= */
-
-@media (max-width: 700px) {
-
-  .hero {
-    min-height: 720px;
-    height: 720px;
-  }
-
-  .hero-content {
-    position: relative;
-    height: 720px;
-    min-height: 720px;
-    padding-top: 72px;
+  .services-page .services-intro {
+    padding-top: 50px;
     padding-bottom: 20px;
   }
 
-  /* Move the complete text block slightly down and inward. */
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    width: 100%;
-    margin-left: 6px;
-    margin-right: 6px;
-    max-width: calc(100% - 12px);
+  .services-page .services-grid-section {
+    padding-top: 20px;
+    padding-bottom: 55px;
   }
 
-  .hero h1 {
-    font-size: clamp(37px, 10vw, 46px);
-    line-height: 1.04;
-    margin-top: 0;
+  .services-page .construction-section {
+    padding-top: 45px;
   }
 
-  .hero-text {
-    margin-top: 17px;
-    margin-bottom: 0;
-    font-size: 14.5px;
-    line-height: 1.58;
+  .services-page .construction-services {
+    margin-top: 60px;
+    padding-bottom: 60px;
   }
 
-  /*
-     IMPORTANT: actions are back in normal document flow.
-     This removes the large artificial gap completely.
-  */
-  .hero .hero-actions {
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-
-    width: 100%;
-    margin: 24px 0 0;
-    padding: 0 6px;
-
-    display: grid;
-    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 10px;
-  }
-
-  .hero .hero-actions .button {
-    width: 100%;
-    min-width: 0;
-    min-height: 52px;
-    padding: 13px 10px;
-    font-size: 10px;
-    letter-spacing: 0.045em;
-    white-space: nowrap;
-  }
-
-  .hero .play-link {
-    width: 100%;
-    min-width: 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.2;
-    white-space: nowrap;
-  }
-
-  .hero .play-link i {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-    margin: 0;
-  }
-
-  /*
-     Banner is the ONLY absolutely positioned hero element.
-     It remains pinned to the bottom of the hero.
-  */
-  .hero .citizenship-banner {
-    position: absolute;
-    left: 50%;
-    bottom: 12px;
-
-    width: min(100%, 340px);
-    max-width: 340px;
-    margin: 0;
-
-    transform: translateX(-50%);
+  .services-page .construction-process {
+    margin-top: 55px;
+    padding-top: 55px;
+    padding-bottom: 60px;
   }
 }
 
-
-@media (max-width: 420px) {
-
-  .hero {
-    min-height: 700px;
-    height: 700px;
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
-  .hero-content {
-    height: 700px;
-    min-height: 700px;
-    padding-top: 62px;
-  }
-
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    margin-left: 3px;
-    margin-right: 3px;
-    max-width: calc(100% - 6px);
-  }
-
-  .hero h1 {
-    font-size: 36px;
-    line-height: 1.04;
-  }
-
-  .hero-text {
-    margin-top: 15px;
-    font-size: 14px;
-    line-height: 1.58;
-  }
-
-  .hero .hero-actions {
-    margin-top: 20px;
-    padding: 0 3px;
-    grid-template-columns: minmax(0, 1.32fr) minmax(0, 1fr);
-    gap: 8px;
-  }
-
-  .hero .hero-actions .button {
-    min-height: 50px;
-    padding: 12px 8px;
-    font-size: 9.5px;
-  }
-
-  .hero .play-link {
-    gap: 7px;
-    font-size: 11.5px;
-  }
-
-  .hero .play-link i {
-    width: 36px;
-    height: 36px;
-    flex-basis: 36px;
-  }
-
-  .hero .citizenship-banner {
-    width: min(100%, 325px);
-    max-width: 325px;
-    bottom: 10px;
-  }
-}
-
-
-/* =========================================================
-   MOBILE HOME HERO — MOVE UPPER CONTENT DOWN
-   Banner position remains unchanged.
-========================================================= */
-
-@media (max-width: 700px) {
-
-  /*
-     Keep the citizenship banner exactly where it is.
-     Only the content above it moves downward.
-  */
-
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    transform: translateY(58px);
-  }
-
-  .hero .hero-actions {
-    transform: translateY(58px);
-  }
-
-}
-
-
-@media (max-width: 420px) {
-
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    transform: translateY(48px);
-  }
-
-  .hero .hero-actions {
-    transform: translateY(48px);
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE HOME HERO — FINAL VERTICAL ALIGNMENT
-   Banner stays fixed; upper copy and actions move down.
-========================================================= */
-
-
-@media (max-width: 420px) {
-
-  .hero-content > .eyebrow,
-  .hero-content > h1,
-  .hero-content > .hero-text {
-    transform: translateY(68px);
-  }
-
-  .hero .hero-actions {
-    transform: translateY(155px);
-  }
-}
-@media (max-width: 700px) {
-  .hero-content {
-    padding-top: 120px;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero-content {
-    padding-top: 125px;
-  }
-}
-@media (max-width: 700px) {
-  .hero-background {
-    object-position: 65% center;
-  }
-}
-@media (max-width: 700px) {
-  .investment-hero-copy {
-    transform: translateY(30px);
-  }
-}
-
-@media (max-width: 420px) {
-  .investment-hero-copy {
-    transform: translateY(60px);
-  }
-}
-@media (max-width: 700px) {
-  .investment-hero-actions .button,
-  .investment-hero-actions .investment-text-link {
-    width: 70%;
-  }
-
-  .investment-hero-actions .button {
-    min-height: 52px;
-    padding: 12px 16px;
-    font-size: 11px;
-  }
-
-  .investment-hero-actions .investment-text-link {
-    font-size: 17px;
-  }
-}
-
-@media (max-width: 420px) {
-  .investment-hero-actions .button,
-  .investment-hero-actions .investment-text-link {
-    width: 70%;
-  }
-
-  .investment-hero-actions .button {
-    min-height: 50px;
-    padding: 11px 14px;
-    font-size: 10.5px;
-  }
-
-  .investment-hero-actions .investment-text-link {
-    font-size: 11.5px;
-  }
-}
-@media (max-width: 700px) {
-  .investment-hero-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
-    width: 100%;
-  }
-
-  .investment-hero-actions .button {
-    width: 60%;
-    margin: 0;
-  }
-
-  .investment-hero-actions .investment-text-link {
-    display: flex;
-    width: 85%;
-    margin: 0;
-    align-items: center;
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 420px) {
-  .investment-hero-actions .button,
-  .investment-hero-actions .investment-text-link {
-    width: 82%;
+  #home > section.scroll-reveal,
+  #home > section.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

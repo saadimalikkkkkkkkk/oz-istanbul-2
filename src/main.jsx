@@ -35,8 +35,6 @@ import ozIstanbulLogo from './assets/hero-black.jpg';
 import servicesBackground from './assets/services-background.png';
 import citizenshipBanner from './assets/turkish-citizenship-banner.png';
 import investmentHero from './assets/investment-hero.png';
-import governmentBondImage from './assets/government-bond.png';
-import companyInvestmentImage from './assets/company-investment.png';
 import bankDepositImage from './assets/bank-deposit.png';
 import realEstateInvestmentImage from './assets/real-estate-investment.png';
 import {
@@ -66,7 +64,6 @@ import {
   GraduationCap,
   Globe,
   Plane,
-  BriefcaseBusiness,
   Languages
 } from 'lucide-react';
 
@@ -209,7 +206,7 @@ const servicesPageItems = [
     description:
       'Providing strategic support to help businesses grow, invest and succeed internationally.',
     image: businessInvestmentImage,
-    icon: BriefcaseBusiness
+    icon: Building2
   },
   {
     title: 'Translation & Documentation',
@@ -253,34 +250,6 @@ const citizenshipInvestmentOptions = [
     ],
     image: bankDepositImage,
     icon: BarChart3
-  },
-  {
-    number: '03',
-    title: 'Government Bonds',
-    amount: '$500,000',
-    description:
-      'Invest in qualifying Turkish government bonds and maintain the investment for at least 3 years.',
-    details: [
-      ['Minimum investment', '$500,000+'],
-      ['Required period', '3 Years'],
-      ['Investment type', 'Government Bonds']
-    ],
-    image: governmentBondImage,
-    icon: ShieldCheck
-  },
-  {
-    number: '04',
-    title: 'Company Investment',
-    amount: '$500,000',
-    description:
-      'Make a qualifying capital investment in a Turkish company under the applicable citizenship program.',
-    details: [
-      ['Minimum investment', '$500,000+'],
-      ['Required period', 'As required'],
-      ['Investment type', 'Company Investment']
-    ],
-    image: companyInvestmentImage,
-    icon: BriefcaseBusiness
   }
 ];
 
@@ -562,11 +531,7 @@ function AboutPage() {
             Rooted in Trust
           </h1>
 
-          <p className="hero-text">
-            Our story is built on people, partnerships
-            <br />
-            and a commitment to a stronger tomorrow.
-          </p>
+          
 
         </div>
 
@@ -1116,19 +1081,12 @@ function InvestmentPage() {
             </p>
 
             <h1>
-              Your Path to
+              Don’t Miss Your Opportunity
               <br />
-              <em>Turkish Citizenship.</em>
+              <em>to Build a Future in Türkiye.</em>
             </h1>
 
-            <p>
-              Invest in Türkiye and unlock new opportunities
-              for yourself and your family. Our team guides
-              you through the investment, documentation,
-              and application process from start to finish.
-            </p>
-
-            <div className="investment-hero-actions">
+           <div className="investment-hero-actions">
 
               <a
                 className="button"
@@ -1209,198 +1167,78 @@ function InvestmentPage() {
 
             <div className="citizenship-investment-list">
 
-              {citizenshipInvestmentOptions
-                .filter((option) => option.number === '01' || option.number === '02')
-                .map((option) => {
+              {citizenshipInvestmentOptions.map((option) => {
 
-                  const Icon = option.icon;
+                const Icon = option.icon;
 
-                  return (
-                    <article
-                      className="citizenship-investment-card"
-                      key={option.number}
-                    >
+                return (
+                  <article
+                    className="citizenship-investment-card"
+                    key={option.number}
+                  >
 
-                      <div className="citizenship-card-content">
+                    <div className="citizenship-card-image">
+                      <img
+                        src={option.image}
+                        alt={option.title}
+                        loading="lazy"
+                      />
 
-                        <div className="citizenship-card-top">
-
-                          <div className="citizenship-card-icon">
-                            <Icon
-                              size={30}
-                              strokeWidth={1.7}
-                            />
-                          </div>
-
-                          <span>
-                            {option.number}
-                          </span>
-
-                        </div>
-
-
-                        <h4>
-                          {option.title}
-                        </h4>
-
-
-                        <div className="citizenship-card-amount">
-                          {option.amount}
-                        </div>
-
-
-                        <p className="citizenship-card-description">
-                          {option.description}
-                        </p>
-
-
-                        <div className="citizenship-card-details">
-
-                          {option.details.map(([label, value]) => (
-                            <div
-                              className="citizenship-card-detail"
-                              key={label}
-                            >
-                              <strong>{value}</strong>
-                              <span>{label}</span>
-                            </div>
-                          ))}
-
-                        </div>
-
-
-                        <a
-                          href="/contact"
-                          className="citizenship-card-link"
-                        >
-                          Discuss This Option
-                          <Arrow />
-                        </a>
-
-                      </div>
-
-
-                      <div className="citizenship-card-image">
-                        <img
-                          src={option.image}
-                          alt={option.title}
-                          loading="lazy"
+                      <div className="citizenship-card-image-icon">
+                        <Icon
+                          size={25}
+                          strokeWidth={1.8}
                         />
                       </div>
+                    </div>
 
-                    </article>
-                  );
-                })}
+                    <div className="citizenship-card-content">
 
-            </div>
+                      <div className="citizenship-card-top">
+                        <span>
+                          {option.number}
+                        </span>
+                      </div>
 
-          </div>
+                      <h4>
+                        {option.title}
+                      </h4>
 
+                      <div className="citizenship-card-amount">
+                        {option.amount}
+                      </div>
 
-          <div className="investment-option-group investment-option-group-other">
+                      <p className="citizenship-card-description">
+                        {option.description}
+                      </p>
 
-            <div className="investment-group-heading">
-              <div>
-                <p className="eyebrow">
-                  OTHER OPTIONS
-                </p>
+                      <div className="citizenship-card-details">
 
-                <h3>
-                  Other <em>Investment Options.</em>
-                </h3>
-              </div>
-
-              <p>
-                Additional investment routes available under
-                the applicable citizenship programme.
-              </p>
-            </div>
-
-
-            <div className="citizenship-investment-list">
-
-              {citizenshipInvestmentOptions
-                .filter((option) => option.number === '03' || option.number === '04')
-                .map((option) => {
-
-                  const Icon = option.icon;
-
-                  return (
-                    <article
-                      className="citizenship-investment-card"
-                      key={option.number}
-                    >
-
-                      <div className="citizenship-card-content">
-
-                        <div className="citizenship-card-top">
-
-                          <div className="citizenship-card-icon">
-                            <Icon
-                              size={30}
-                              strokeWidth={1.7}
-                            />
+                        {option.details.map(([label, value]) => (
+                          <div
+                            className="citizenship-card-detail"
+                            key={label}
+                          >
+                            <strong>{value}</strong>
+                            <span>{label}</span>
                           </div>
-
-                          <span>
-                            {option.number}
-                          </span>
-
-                        </div>
-
-
-                        <h4>
-                          {option.title}
-                        </h4>
-
-
-                        <div className="citizenship-card-amount">
-                          {option.amount}
-                        </div>
-
-
-                        <p className="citizenship-card-description">
-                          {option.description}
-                        </p>
-
-
-                        <div className="citizenship-card-details">
-
-                          {option.details.map(([label, value]) => (
-                            <div
-                              className="citizenship-card-detail"
-                              key={label}
-                            >
-                              <strong>{value}</strong>
-                              <span>{label}</span>
-                            </div>
-                          ))}
-
-                        </div>
-
-
-                        <a
-                          href="/contact"
-                          className="citizenship-card-link"
-                        >
-                          Discuss This Option
-                          <Arrow />
-                        </a>
+                        ))}
 
                       </div>
 
+                      <a
+                        href="/contact"
+                        className="citizenship-card-link"
+                      >
+                        Discuss This Option
+                        <Arrow />
+                      </a>
 
-                      <div className="citizenship-card-image">
-                        <img
-                          src={option.image}
-                          alt={option.title}
-                          loading="lazy"
-                        />
-                      </div>
+                    </div>
 
-                    </article>
-                  );
-                })}
+                  </article>
+                );
+              })}
 
             </div>
 
@@ -1936,12 +1774,6 @@ function ContactPage() {
             <span>What’s Next.</span>
           </h1>
 
-          <p className="contact-hero-text">
-            We are always open to new partnerships, opportunities,
-            and conversations. Reach out to us — we’d be happy
-            to hear from you.
-          </p>
-
         </div>
 
       </section>
@@ -2340,16 +2172,10 @@ function ServicesPage() {
           </p>
 
           <h1>
-            Integrated Solutions
+            Our Areas
             <br />
-            for a Global Future
+            Of Expertise
           </h1>
-
-          <p className="services-hero-text">
-            Building businesses. Developing investments.
-            <br />
-            Creating opportunities.
-          </p>
 
         </div>
 
@@ -3298,6 +3124,46 @@ function ServicesPage() {
 function HomePage() {
   const [homeStatus, setHomeStatus] = useState('');
 
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll('#home > section:not(.hero)')
+    );
+
+    if (!sections.length) {
+      return undefined;
+    }
+
+    sections.forEach((section) => {
+      section.classList.add('scroll-reveal');
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach((section) => {
+        section.classList.add('is-visible');
+      });
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -45px'
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleHomeSubmit = async (e) => {
     e.preventDefault();
 
@@ -3529,7 +3395,7 @@ function HomePage() {
                 We Build, Invest &amp; Operate
                 <br />
                 <em>
-                  — Not Just Advise
+                   Not Just Advise
                 </em>
               </h2>
 
@@ -4305,6 +4171,48 @@ function Footer() {
 
 function App() {
   const path = window.location.pathname;
+
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll(
+        'main:not(.contact-page):not(.services-page) > section:not(.hero):not([class*="-hero"])'
+      )
+    );
+
+    if (!sections.length) {
+      return undefined;
+    }
+
+    sections.forEach((section) => {
+      section.classList.add('scroll-reveal');
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach((section) => {
+        section.classList.add('is-visible');
+      });
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -45px'
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   let page;
 
